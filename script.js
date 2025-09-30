@@ -1,6 +1,4 @@
-// ============================
 // Sample Product Data
-// ============================
 const products = [
     { 
         id: 1, 
@@ -47,9 +45,7 @@ const products = [
     }
 ];
 
-// ============================
 // Combo Expansion Products (16+ items)
-// ============================
 const comboProducts = [
     { 
         id: 101, 
@@ -166,12 +162,15 @@ const comboProducts = [
 ];
 
 
-// ============================
 // Render Products Dynamically
-// ============================
 function renderProducts(list) {
     const container = document.getElementById("product-container");
+
+    // Clear container fully before rendering new products
     container.innerHTML = "";
+
+    // Scroll container to top (optional)
+    container.scrollTop = 0;
 
     if (list.length === 0) {
         container.innerHTML = `<p>No products found.</p>`;
@@ -192,9 +191,13 @@ function renderProducts(list) {
         const image = card.querySelector(".product-image");
         const button = card.querySelector(".buy-btn");
 
-        // Image click
+        // Click event to open combo products if combo, else open link
         if (product.isCombo) {
             image.addEventListener("click", () => {
+                renderProducts(comboProducts);
+                history.pushState({page: "combo"}, "Combo Products", "#combo");
+            });
+            button.addEventListener("click", () => {
                 renderProducts(comboProducts);
                 history.pushState({page: "combo"}, "Combo Products", "#combo");
             });
@@ -202,15 +205,6 @@ function renderProducts(list) {
             image.addEventListener("click", () => {
                 window.open(product.link, "_blank");
             });
-        }
-
-        // Button click
-        if (product.isCombo) {
-            button.addEventListener("click", () => {
-                renderProducts(comboProducts);
-                history.pushState({page: "combo"}, "Combo Products", "#combo");
-            });
-        } else if (product.link) {
             button.addEventListener("click", () => {
                 window.open(product.link, "_blank");
             });
@@ -220,9 +214,7 @@ function renderProducts(list) {
     });
 }
 
-// ============================
 // Filter by Category
-// ============================
 function filterByCategory(category) {
     if (category === "all") {
         renderProducts(products);
@@ -234,9 +226,7 @@ function filterByCategory(category) {
     }
 }
 
-// ============================
 // Search Function
-// ============================
 function filterProducts() {
     const searchValue = document.getElementById("search").value.toLowerCase();
     const filtered = products.filter(p =>
@@ -246,18 +236,14 @@ function filterProducts() {
     renderProducts(filtered);
 }
 
-// ============================
 // Show Home Page
-// ============================
 function showHomePage() {
     renderProducts(products);
     document.getElementById("search").value = "";
     history.replaceState({page: "home"}, "Home", "#home");
 }
 
-// ============================
 // Handle browser back/forward
-// ============================
 window.onpopstate = function(event) {
     if (event.state) {
         if (event.state.page === "combo") {
@@ -272,9 +258,7 @@ window.onpopstate = function(event) {
     }
 };
 
-// ============================
 // Initialize Page
-// ============================
 window.onload = function() {
     history.replaceState({page: "home"}, "Home", "#home");
     renderProducts(products);
