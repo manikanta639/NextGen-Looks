@@ -9,7 +9,7 @@ const products = [
         image: "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/2025/APRIL/30/WH0feuaa_d72aa9d526da417d8db14ebe0573a2db.jpg", 
         link: "https://myntr.in/cfaFin" 
     },
-    /*{ 
+    { 
         id: 2, 
         name: "Formal Pants", 
         category: "pants", 
@@ -35,7 +35,8 @@ const products = [
         name: "Gift Combo Pack", 
         category: "combos", 
         image: "https://m.media-amazon.com/images/I/31TEA0qrUBL._SX342_SY445_QL70_FMwebp_.jpg", 
-        link: "", isCombo: true 
+        link: "", 
+        isCombo: true 
     },
     { 
         id: 6, 
@@ -47,37 +48,13 @@ const products = [
 ];
 
 // ============================
-// Combo Expansion Products (4 examples)
+// Combo Expansion Products
 // ============================
 const comboProducts = [
-    { 
-        id: 101, 
-        name: "Combo Shirt + Watch", 
-        category: "combos-detail", 
-        image: "https://m.media-amazon.com/images/I/41g1vV8pXlL._SX342_SY445_.jpg", 
-        link: "https://amzn.to/4nRHt7w" 
-    },
-    { 
-        id: 102, 
-        name: "Combo Pants + Shoes", 
-        category: "combos-detail", 
-        image: "https://m.media-amazon.com/images/I/41TCyNn0GDL._SX342_SY445_.jpg", 
-        link: "https://amzn.to/4nRHt7w" 
-    },
-    { 
-        id: 103, 
-        name: "Combo Jacket + Shoes", 
-        category: "combos-detail", 
-        image: "https://m.media-amazon.com/images/I/41hTdrqfWlL._SX342_SY445_.jpg", 
-        link: "https://amzn.to/4nRHt7w" 
-    },
-    { 
-        id: 104, 
-        name: "Combo T-Shirt + Watch", 
-        category: "combos-detail", 
-        image: "https://m.media-amazon.com/images/I/41Z5CjY+VUL._SX342_SY445_.jpg", 
-        link: "https://amzn.to/4nRHt7w" 
-    }*/
+    { id: 101, name: "Combo Shirt + Watch", category: "combos-detail", image: "https://m.media-amazon.com/images/I/41g1vV8pXlL._SX342_SY445_.jpg", link: "https://amzn.to/4nRHt7w" },
+    { id: 102, name: "Combo Pants + Shoes", category: "combos-detail", image: "https://m.media-amazon.com/images/I/41TCyNn0GDL._SX342_SY445_.jpg", link: "https://amzn.to/4nRHt7w" },
+    { id: 103, name: "Combo Jacket + Shoes", category: "combos-detail", image: "https://m.media-amazon.com/images/I/41hTdrqfWlL._SX342_SY445_.jpg", link: "https://amzn.to/4nRHt7w" },
+    { id: 104, name: "Combo T-Shirt + Watch", category: "combos-detail", image: "https://m.media-amazon.com/images/I/41Z5CjY+VUL._SX342_SY445_.jpg", link: "https://amzn.to/4nRHt7w" }
 ];
 
 // ============================
@@ -103,27 +80,32 @@ function renderProducts(list) {
             <button class="buy-btn">Buy Now</button>
         `;
 
-        // Open product link when image is clicked
         const image = card.querySelector(".product-image");
-        if (product.link) {
+        const button = card.querySelector(".buy-btn");
+
+        // Buy Now button click
+        button.addEventListener("click", (e) => {
+            e.stopPropagation(); // Prevent card click
+            if (product.isCombo) {
+                // Show combo products for main combo
+                renderProducts(comboProducts);
+            } else if (product.link) {
+                // Open product link
+                window.open(product.link, "_blank");
+            }
+        });
+
+        // Image click for normal products
+        if (!product.isCombo && product.link) {
             image.addEventListener("click", () => {
                 window.open(product.link, "_blank");
             });
         }
 
-        // Open product link when Buy Now button is clicked
-        const button = card.querySelector(".buy-btn");
-        if (product.link) {
-            button.addEventListener("click", () => {
-                window.open(product.link, "_blank");
-            });
-        }
-
-        // If it's a combo product, clicking card shows combo list
+        // Combo product click (card click)
         if (product.isCombo) {
             card.addEventListener("click", (e) => {
-                // prevent combo card click from triggering image/button link
-                if (!e.target.classList.contains("product-image") && !e.target.classList.contains("buy-btn")) {
+                if (!e.target.classList.contains("buy-btn")) {
                     renderProducts(comboProducts);
                 }
             });
