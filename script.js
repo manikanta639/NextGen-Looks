@@ -4,8 +4,23 @@ const products = [
         id: 1, 
         name: "Casual Shirt", 
         category: "shirts", 
+        image: "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/2025/JANUARY/30/DlXJN34m_f0721222f4cd4ee9ba90b5a3942918e3.jpg", 
+        link: "https://myntr.in/UaifTF" 
+    },
+    { 
+        id: 2, 
+        name: "Checked Casual Shirt", 
+        category: "shirts", 
         image: "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/2025/APRIL/30/WH0feuaa_d72aa9d526da417d8db14ebe0573a2db.jpg", 
-        link: "https://myntr.in/cfaFin" 
+        link: "https://myntr.in/ZejiPP" 
+    },
+    { 
+        id: 5, 
+        name: "Gift Combo Pack", 
+        category: "combos", 
+        image: "https://m.media-amazon.com/images/I/31TEA0qrUBL._SX342_SY445_QL70_FMwebp_.jpg", 
+        link: "", 
+        isCombo: true 
     },
  /*   { 
         id: 2, 
@@ -264,5 +279,6 @@ window.onload = function() {
     history.replaceState({page: "home"}, "Home", "#home");
     renderProducts(products);
 };
+
 
 
