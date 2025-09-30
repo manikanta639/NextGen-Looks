@@ -42,11 +42,11 @@ const products = [
         category: "others", 
         image: "https://m.media-amazon.com/images/I/31TEA0qrUBL._SX342_SY445_QL70_FMwebp_.jpg", 
         link: "https://amzn.to/4nRHt7w" 
-    }
+    }*/
 ];
 
 // Combo Expansion Products (16+ items)
-const comboProducts = [
+/*const comboProducts = [
     { 
         id: 101, 
         name: "Combo Shirt + Watch", 
@@ -264,4 +264,5 @@ window.onload = function() {
     history.replaceState({page: "home"}, "Home", "#home");
     renderProducts(products);
 };
+
 
