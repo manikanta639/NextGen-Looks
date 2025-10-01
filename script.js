@@ -4,7 +4,7 @@ const products = [
         id: 3, 
         name: "Sneakers", 
         category: "combos", 
-        image: "https://m.media-amazon.com/images/I/31TEA0qrUBL._SX342_SY445_QL70_FMwebp_.jpg", 
+        image: "https://rukminim2.flixcart.com/image/832/832/xif0q/shoe/a/c/o/-original-imahgcstr7c9y6hh.jpeg?q=70&crop=false", 
         link: "", 
         isCombo: true 
     },
@@ -276,6 +276,7 @@ window.onload = function() {
     renderProducts(products);
     document.body.style.opacity = 1; // ensure body visible initially
 };
+
 
 
 
