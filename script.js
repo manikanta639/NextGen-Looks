@@ -90,9 +90,7 @@ const comboProducts = {
     name: "Shoe 2",
     image: "https://m.media-amazon.com/images/I/41TCyNn0GDL._SX342_SY445_.jpg",
     link: "https://amzn.to/4nRHt7w"
-  }
-],
-6: [
+  },
   {
     id: 201,
     name: "Shoe 3",
@@ -255,6 +253,7 @@ window.onload = function() {
 };
 
  
+
 
 
 
