@@ -165,12 +165,12 @@ const comboProducts = {
 // =====================
 function animatePageTransition(callback) {
     const body = document.body;
-    body.style.transition = "opacity 0.3s ease-out";
+    body.style.transition = "opacity 0.2s ease-out";
     body.style.opacity = 0;
     setTimeout(() => {
         callback();
         body.style.opacity = 1;
-    }, 250);
+    }, 150);
 }
 
 // =====================
@@ -299,4 +299,5 @@ window.onload = function() {
     renderProducts(products);
     document.body.style.opacity = 1; // ensure body visible initially
 };
+
 
