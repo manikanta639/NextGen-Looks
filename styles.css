@@ -203,7 +203,7 @@ header h1 {
    ===================== */
 .card img {
     width: 100%;                      /* fill card width */
-    height: 250px;                     /* desktop height */
+    height: 300px;                     /* desktop height */
     object-fit: cover;                 /* crop to fill container */
     object-position: top;              /* show face + hands */
     border-radius: 8px; /* top-left, top-right, bottom-right, bottom-left */
@@ -214,11 +214,16 @@ header h1 {
 }
 
 /* =====================
-   MOBILE RESPONSIVE IMAGES
+   MOBILE RESPONSIVE IMAGES + DESKTOP
    ===================== */
-@media (max-width: 1024px) {
+    @media (max-width: 1440px) {
     .card img {
-        height: 220px;                 /* slightly smaller for medium screens */
+        height: 280px; /* slightly smaller for smaller desktops/laptops */
+    }
+}
+   @media (max-width: 1024px) {
+    .card img {
+        height: 250px;                 /* slightly smaller for medium screens */
     }
 }
 
@@ -282,6 +287,7 @@ header h1 {
     gap: 20px;
     padding: 10px;
     max-width: 1450px;
+    
     margin: auto;
 }
 
