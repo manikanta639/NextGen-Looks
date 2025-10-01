@@ -23,7 +23,7 @@ const products = [
         image: "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/2025/JANUARY/30/DlXJN34m_f0721222f4cd4ee9ba90b5a3942918e3.jpg", 
         link: "https://myntr.in/UaifTF" 
     },
-
+/*
 {
   id: 31,
   name: "Formal Pants",
@@ -73,7 +73,7 @@ const products = [
   image: "https://m.media-amazon.com/images/I/31TEA0qrUBL._SX342_SY445_QL70_FMwebp_.jpg",
   isCombo: true
 }
-
+*/
 ];
 
 // Combo Products Data (Scalable)
@@ -131,7 +131,7 @@ const comboProducts = {
   }
 ],
 /*-------------------------------------------------------------------------------------------------------------*/    
-7: [
+/*7: [
   {
     id: 301,
     name: "Combo Hat + Shirt",
@@ -159,7 +159,7 @@ const comboProducts = {
     link: "https://amzn.to/4nRHt7w"
   }
 ]
-
+*/
 };
 
 // Render Products (General)
@@ -255,5 +255,6 @@ window.onload = function() {
 };
 
  
+
 
 
