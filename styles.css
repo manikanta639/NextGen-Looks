@@ -260,7 +260,7 @@ header h1 {
    BUY NOW BUTTON
    ===================== */
 .buy-btn {
-    margin-top: -10px;
+    margin-top: -6px;
     padding: 10px 20px;
     border: none;
     border-radius: 20px;
@@ -336,6 +336,7 @@ header h1 {
         flex: 0 0 auto; /* ✅ Prevent shrinking */
     }
 }
+
 
 
 
