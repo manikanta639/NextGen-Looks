@@ -2,7 +2,7 @@
 const products = [
     { 
         id: 3, 
-        name: "Snickers", 
+        name: "Sneakers", 
         category: "combos", 
         image: "https://m.media-amazon.com/images/I/31TEA0qrUBL._SX342_SY445_QL70_FMwebp_.jpg", 
         link: "", 
@@ -80,52 +80,29 @@ const products = [
 const comboProducts = {
 3: [
   {
-    id: 101,
     name: "Shoe 1",
-    image: "https://m.media-amazon.com/images/I/31TEA0qrUBL._SX342_SY445_QL70_FMwebp_.jpg",
-    link: "https://amzn.to/4nRHt7w"
+    image: "https://rukminim2.flixcart.com/image/832/832/xif0q/shoe/a/c/o/-original-imahgcstr7c9y6hh.jpeg?q=70&crop=false",
+    link: "https://fkrt.co/9UeGkT"
   },
   {
-    id: 102,
     name: "Shoe 2",
-    image: "https://m.media-amazon.com/images/I/41TCyNn0GDL._SX342_SY445_.jpg",
-    link: "https://amzn.to/4nRHt7w"
+    image: "https://rukminim2.flixcart.com/image/832/832/xif0q/shoe/y/v/4/-original-imahgcsvhcbqyr6y.jpeg?q=70&crop=false",
+    link: "https://fkrt.co/X4iSaL"
   },
   {
-    id: 201,
     name: "Shoe 3",
-    image: "https://m.media-amazon.com/images/I/41hTdrqfWlL._SX342_SY445_.jpg",
-    link: "https://amzn.to/4nRHt7w"
+    image: "https://rukminim2.flixcart.com/image/832/832/xif0q/shoe/l/f/p/-original-imahgcsvkfjz8nxy.jpeg?q=70&crop=false",
+    link: "https://fkrt.co/5hOYpw"
   },
   {
-    id: 202,
     name: "Shoe 4",
-    image: "https://m.media-amazon.com/images/I/41fheRrR0GL._SX342_SY445_.jpg",
-    link: "https://amzn.to/4nRHt7w"
+    image: "https://rukminim2.flixcart.com/image/832/832/xif0q/shoe/a/b/b/-original-imahgcstz6guamgu.jpeg?q=70&crop=false",
+    link: "https://fkrt.co/uDs3qU"
   },
   {
-    id: 203,
     name: "Shoe 5",
-    image: "https://m.media-amazon.com/images/I/31TEA0qrUBL._SX342_SY445_QL70_FMwebp_.jpg",
-    link: "https://amzn.to/4nRHt7w"
-  },
-  {
-    id: 202,
-    name: "Shoe 6",
-    image: "https://m.media-amazon.com/images/I/41fheRrR0GL._SX342_SY445_.jpg",
-    link: "https://amzn.to/4nRHt7w"
-  },
-  {
-    id: 202,
-    name: "Shoe 7",
-    image: "https://m.media-amazon.com/images/I/41fheRrR0GL._SX342_SY445_.jpg",
-    link: "https://amzn.to/4nRHt7w"
-  },
-  {
-    id: 202,
-    name: "Shoe 8",
-    image: "https://m.media-amazon.com/images/I/41fheRrR0GL._SX342_SY445_.jpg",
-    link: "https://amzn.to/4nRHt7w"
+    image: "https://rukminim2.flixcart.com/image/832/832/xif0q/shoe/l/f/2/-original-imahgbrvwfjpg9fh.jpeg?q=70&crop=false",
+    link: "https://fkrt.co/yOP03n"
   }
 ],
 /*-------------------------------------------------------------------------------------------------------------*/    
@@ -299,5 +276,6 @@ window.onload = function() {
     renderProducts(products);
     document.body.style.opacity = 1; // ensure body visible initially
 };
+
 
 
