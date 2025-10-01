@@ -160,8 +160,37 @@ const comboProducts = {
 */
 };
 
-// Render Products (General)
-function renderProducts(list) {
+// =====================
+// Page Animation Helpers
+// =====================
+function animatePageTransition(callback) {
+    const body = document.body;
+    body.style.transition = "opacity 0.2s ease-out";
+    body.style.opacity = 0;
+    setTimeout(() => {
+        callback();
+        body.style.opacity = 1;
+    }, 150);
+}
+
+// =====================
+// Hide/Show Header Above Search Bar
+// =====================
+function toggleHeaderVisibility(show) {
+    // Header (logo + title)
+    const header = document.getElementById("site-header");
+    // Shop Now button container
+    const shopNowDiv = document.querySelector(".cta-btn")?.parentElement;
+
+    if (header) header.style.display = show ? "block" : "none";
+    if (shopNowDiv) shopNowDiv.style.display = show ? "block" : "none";
+}
+
+// =====================
+// Render Products
+// =====================
+function renderProducts(list, hideHeader = false) {
+    toggleHeaderVisibility(!hideHeader); // hide header if needed
     const container = document.getElementById("product-container");
     container.innerHTML = "";
     container.scrollTop = 0;
@@ -176,7 +205,7 @@ function renderProducts(list) {
         card.className = "card";
 
         card.innerHTML = `
-            <span class="product-number">#${product.id}</span>
+            ${product.id ? `<span class="product-number">#${product.id}</span>` : ""}
             <img src="${product.image}" alt="${product.name}" class="product-image" />
             <p class="product-name">${product.name}</p>
             <button class="buy-btn">Buy Now</button>
@@ -185,11 +214,12 @@ function renderProducts(list) {
         const image = card.querySelector(".product-image");
         const button = card.querySelector(".buy-btn");
 
-        // If combo, render its products on click
         if (product.isCombo && comboProducts[product.id]) {
             const showCombo = () => {
-                renderProducts(comboProducts[product.id]);
-                history.pushState({ page: "combo", comboId: product.id }, "Combo Products", `#combo-${product.id}`);
+                animatePageTransition(() => {
+                    renderProducts(comboProducts[product.id], true); // hide header on combos
+                    history.pushState({ page: "combo", comboId: product.id }, "Combo Products", `#combo-${product.id}`);
+                });
             };
             image.addEventListener("click", showCombo);
             button.addEventListener("click", showCombo);
@@ -203,39 +233,54 @@ function renderProducts(list) {
     });
 }
 
+
+// =====================
 // Filter by Category
+// =====================
 function filterByCategory(category) {
     if (category === "all") {
-        renderProducts(products);
-        history.pushState({ page: "home" }, "Home", "#home");
+        animatePageTransition(() => {
+            renderProducts(products);
+            history.pushState({ page: "home" }, "Home", "#home");
+        });
     } else {
         const filtered = products.filter(p => p.category === category);
-        renderProducts(filtered);
-        history.pushState({ page: category }, category.charAt(0).toUpperCase() + category.slice(1), `#${category}`);
+        animatePageTransition(() => {
+            renderProducts(filtered);
+            history.pushState({ page: category }, category.charAt(0).toUpperCase() + category.slice(1), `#${category}`);
+        });
     }
 }
 
+// =====================
 // Search Products
+// =====================
 function filterProducts() {
     const searchValue = document.getElementById("search").value.toLowerCase();
     const filtered = products.filter(p =>
-        p.name.toLowerCase().includes(searchValue) || p.id.toString().includes(searchValue)
+        p.name.toLowerCase().includes(searchValue) || (p.id && p.id.toString().includes(searchValue))
     );
-    renderProducts(filtered);
+    animatePageTransition(() => renderProducts(filtered));
 }
 
+// =====================
 // Show Home Page
+// =====================
 function showHomePage() {
-    renderProducts(products);
-    document.getElementById("search").value = "";
-    history.replaceState({ page: "home" }, "Home", "#home");
+    animatePageTransition(() => {
+        renderProducts(products);
+        document.getElementById("search").value = "";
+        history.replaceState({ page: "home" }, "Home", "#home");
+    });
 }
 
+// =====================
 // Handle browser back/forward
+// =====================
 window.onpopstate = function(event) {
     if (event.state) {
         if (event.state.page === "combo" && event.state.comboId) {
-            renderProducts(comboProducts[event.state.comboId]);
+            animatePageTransition(() => renderProducts(comboProducts[event.state.comboId]));
         } else if (event.state.page === "home" || event.state.page === "all") {
             showHomePage();
         } else {
@@ -246,14 +291,11 @@ window.onpopstate = function(event) {
     }
 };
 
+// =====================
 // Initialize Page
+// =====================
 window.onload = function() {
     history.replaceState({ page: "home" }, "Home", "#home");
     renderProducts(products);
+    document.body.style.opacity = 1; // ensure body visible initially
 };
-
- 
-
-
-
-
