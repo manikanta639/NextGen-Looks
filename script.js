@@ -123,16 +123,16 @@ const comboProducts = {
     image: "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/2025/MAY/7/iETIOqml_093de7982597463cb30609ae0c945f3c.jpg",
     link: "https://myntr.in/K0Llim"
   },
-    {
+ {
     name: "Shirt 3",
     image: "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/33988086/2025/5/16/3da1f93d-3955-43f7-b3de-5f780e778a6a1747373637174-HERENOW-Men-Tartan-Checks-Casual-Shirt-8391747373636541-1.jpg",
     link: "https://myntr.in/fNhBln"
   },
-    {
+ {
     name: "Shirt 4",
     image: "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/33203161/2025/3/20/47df1e5d-2cb3-45de-9050-a72cbfaa097c1742480051691-HERENOW-Men-Opaque-Striped-Casual-Shirt-5041742480051024-4.jpg",
     link: "https://myntr.in/DY8GYl"
-  },
+  }
 ],
 /*-------------------------------------------------------------------------------------------------------------*/    
 /*7: [
@@ -305,6 +305,7 @@ window.onload = function() {
     renderProducts(products);
     document.body.style.opacity = 1; // ensure body visible initially
 };
+
 
 
 
