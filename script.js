@@ -5,7 +5,7 @@ const products = [
         name: "Striped Shirt", 
         category: "shirts", 
         image: "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/2025/MAY/7/YPZwCB9L_6ce665d1fdb343f388127e471c5bdb09.jpg", 
-        link: ""
+        link: "",
         isCombo: true 
     },
     { 
@@ -306,6 +306,7 @@ window.onload = function() {
     renderProducts(products);
     document.body.style.opacity = 1; // ensure body visible initially
 };
+
 
 
 
