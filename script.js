@@ -21,7 +21,7 @@ const products = [
         name: "Casual Shirt", 
         category: "shirts", 
         image: "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/2025/APRIL/30/WH0feuaa_d72aa9d526da417d8db14ebe0573a2db.jpg", 
-        link: "https://myntr.in/ZejiPP" 
+        link: "http://bit.ly/3IUSnua" 
     },
     
     { 
@@ -90,49 +90,49 @@ const comboProducts = {
   {
     name: "Shoe 1",
     image: "https://rukminim2.flixcart.com/image/832/832/xif0q/shoe/a/c/o/-original-imahgcstr7c9y6hh.jpeg?q=70&crop=false",
-    link: "https://fkrt.co/9UeGkT"
+    link: "http://bit.ly/48e06hf"
   },
   {
     name: "Shoe 2",
     image: "https://rukminim2.flixcart.com/image/832/832/xif0q/shoe/y/v/4/-original-imahgcsvhcbqyr6y.jpeg?q=70&crop=false",
-    link: "https://fkrt.co/X4iSaL"
+    link: "http://bit.ly/4mNHIzs"
   },
   {
     name: "Shoe 3",
     image: "https://rukminim2.flixcart.com/image/832/832/xif0q/shoe/l/f/p/-original-imahgcsvkfjz8nxy.jpeg?q=70&crop=false",
-    link: "https://fkrt.co/5hOYpw"
+    link: "http://bit.ly/4mLUfmQ"
   },
   {
     name: "Shoe 4",
     image: "https://rukminim2.flixcart.com/image/832/832/xif0q/shoe/a/b/b/-original-imahgcstz6guamgu.jpeg?q=70&crop=false",
-    link: "https://fkrt.co/uDs3qU"
+    link: "http://bit.ly/3WrzFgN"
   },
   {
     name: "Shoe 5",
     image: "https://rukminim2.flixcart.com/image/832/832/xif0q/shoe/l/f/2/-original-imahgbrvwfjpg9fh.jpeg?q=70&crop=false",
-    link: "https://fkrt.co/yOP03n"
+    link: "http://bit.ly/3WjUBX0"
   }
 ],
 4: [
   {
     name: "Shirt 1",
     image: "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/2025/MAY/7/XDhBEReQ_8ce024c24b054112852f9c9e25706a39.jpg",
-    link: "https://myntr.in/ZBTaHr"
+    link: "http://bit.ly/434fclZ"
   },
   {
     name: "Shirt 2",
     image: "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/2025/MAY/7/iETIOqml_093de7982597463cb30609ae0c945f3c.jpg",
-    link: "https://myntr.in/K0Llim"
+    link: "http://bit.ly/4o28Knx"
   },
  {
     name: "Shirt 3",
     image: "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/33988086/2025/5/16/3da1f93d-3955-43f7-b3de-5f780e778a6a1747373637174-HERENOW-Men-Tartan-Checks-Casual-Shirt-8391747373636541-1.jpg",
-    link: "https://myntr.in/fNhBln"
+    link: "http://bit.ly/4o6ozKg"
   },
  {
     name: "Shirt 4",
     image: "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/33203161/2025/3/20/47df1e5d-2cb3-45de-9050-a72cbfaa097c1742480051691-HERENOW-Men-Opaque-Striped-Casual-Shirt-5041742480051024-4.jpg",
-    link: "https://myntr.in/DY8GYl"
+    link: "http://bit.ly/4nCmCFs"
   }
 ],
 /*-------------------------------------------------------------------------------------------------------------*/    
@@ -306,6 +306,7 @@ window.onload = function() {
     renderProducts(products);
     document.body.style.opacity = 1; // ensure body visible initially
 };
+
 
 
 
