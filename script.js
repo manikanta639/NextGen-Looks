@@ -1,6 +1,13 @@
 // Sample Product Data
 const products = [
     { 
+        id: 5, 
+        name: "Shirt", 
+        category: "shirts", 
+        image: "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/30149421/2024/7/8/7305f9f3-5a26-40cd-80ea-f6cb09e6a3601720431638644CantabilMenOpaqueCheckedCasualShirt4.jpg", 
+        link: "https://myntr.in/p8WCHF"
+    },
+    { 
         id: 4, 
         name: "Striped Shirt", 
         category: "shirts", 
@@ -306,3 +313,4 @@ window.onload = function() {
   renderProducts(products);
   document.body.style.opacity = 1;
 };
+
