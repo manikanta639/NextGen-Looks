@@ -1,55 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="icon" type="image" href="NG.png">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NextGen Looks</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NG Deals</title>
+  <link rel="icon" type="image/png" href="NG.png">
+  <style>
+    body {
+      margin: 0;
+      background: #000;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+    img.logo {
+      width: 150px;
+      margin-bottom: 20px;
+      border-radius: 10px;
+    }
+    h1 {
+      margin-bottom: 40px;
+    }
+    button {
+      background: #4285F4;
+      color: white;
+      border: none;
+      font-size: 20px;
+      padding: 15px 30px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+    button:hover {
+      transform: scale(1.05);
+    }
+    p {
+      margin-top: 20px;
+      font-size: 14px;
+      color: #ccc;
+    }
+  </style>
 </head>
 <body>
 
-    <!-- Logo + Title -->
-    <header id="site-header">
-        <img src="NEXTGEN LOOKS.png" alt="Logo" class="logo" style="border-radius: 10px;">
-        <h1>NextGen Looks</h1>
-    </header>
+  <img src="NEXTGEN LOOKS.png" alt="Logo" class="logo">
+  <h1>NG Deals</h1>
 
-    <!-- Shop Now Button -->
-    <div>
-        <a href="index2.html" target="_blank">
-            <button class="cta-btn">Shop Now</button>
-        </a>
-    </div>
+  <button onclick="openShop()">Open Shop</button>
+  <p>Click the button above to open our shop in the best browser for your device!</p>
 
-    <!-- Sticky Search Bar -->
-    <div class="search-container">
-        <input type="text" id="search" placeholder="Search by name or number..." oninput="filterProducts()">
-    </div>
+  <script>
+    function openShop() {
+      const userAgent = navigator.userAgent || navigator.vendor || window.opera;
 
-    <!-- ✅ Categories -->
-    <div class="categories">
-        <button onclick="filterByCategory('all')">All</button>
-        <button onclick="filterByCategory('combos')">Combos</button>
-        <button onclick="filterByCategory('shirts')">Shirts</button>
-        <button onclick="filterByCategory('pants')">Pants</button>
-        <button onclick="filterByCategory('shoes')">Shoes</button>
-        <button onclick="filterByCategory('watches')">Watches</button>
-        <button onclick="filterByCategory('others')">Others</button>
-    </div>
+      if (/android/i.test(userAgent)) {
+        // Android → Open Chrome
+        window.location.href = "intent://ngdeals.netlify.app/products.html/#Intent;scheme=https;package=com.android.chrome;end";
+      } else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+        // iOS → Open Safari (default browser)
+        window.location.href = "https://ngdeals.netlify.app/products.html";
+      } else {
+        // Other devices → open normally
+        window.location.href = "https://ngdeals.netlify.app/products.html";
+      }
+    }
+  </script>
 
-    <!-- Subcategories will appear here dynamically -->
-    <div id="subcategory-container"></div>
-
-    <!-- Products -->
-    <div id="product-container" class="product-grid"></div>
-
-    <script src="script.js"></script>
 </body>
 </html>
-
-
-
-
-
-ind
