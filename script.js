@@ -11,7 +11,7 @@ const products = [
     { 
         id: 3, 
         name: "Sneakers", 
-        category: "combos", 
+        category: "shoes", 
         image: "https://rukminim2.flixcart.com/image/832/832/xif0q/shoe/a/c/o/-original-imahgcstr7c9y6hh.jpeg?q=70&crop=false", 
         link: "", 
         isCombo: true 
@@ -167,155 +167,142 @@ const comboProducts = {
 */
 };
 
+
+
+
+
+
 // =====================
-// Page Animation Helpers
+// Page Animation
 // =====================
 function animatePageTransition(callback) {
-    const body = document.body;
-    body.style.transition = "opacity 0.2s ease-out";
-    body.style.opacity = 0;
-    setTimeout(() => {
-        callback();
-        body.style.opacity = 1;
-    }, 150);
+  const body = document.body;
+  body.style.transition = "opacity 0.2s ease-out";
+  body.style.opacity = 0;
+  setTimeout(() => {
+    callback();
+    body.style.opacity = 1;
+  }, 150);
 }
 
 // =====================
-// Hide/Show Header Above Search Bar
+// Show/Hide Header
 // =====================
 function toggleHeaderVisibility(show) {
-    // Header (logo + title)
-    const header = document.getElementById("site-header");
-    // Shop Now button container
-    const shopNowDiv = document.querySelector(".cta-btn")?.parentElement;
-
-    if (header) header.style.display = show ? "block" : "none";
-    if (shopNowDiv) shopNowDiv.style.display = show ? "block" : "none";
+  const header = document.getElementById("site-header");
+  const shopNowDiv = document.querySelector(".cta-btn")?.parentElement;
+  if (header) header.style.display = show ? "block" : "none";
+  if (shopNowDiv) shopNowDiv.style.display = show ? "block" : "none";
 }
 
 // =====================
 // Render Products
 // =====================
 function renderProducts(list, hideHeader = false) {
-    toggleHeaderVisibility(!hideHeader); // hide header if needed
-    const container = document.getElementById("product-container");
-    container.innerHTML = "";
-    container.scrollTop = 0;
+  toggleHeaderVisibility(!hideHeader);
+  const container = document.getElementById("product-container");
+  container.innerHTML = "";
 
-    if (!list || list.length === 0) {
-        container.innerHTML = `<p>No products found.</p>`;
-        return;
+  if (!list || list.length === 0) {
+    container.innerHTML = `<p>No products found.</p>`;
+    return;
+  }
+
+  list.forEach(product => {
+    const card = document.createElement("div");
+    card.className = "card";
+
+    card.innerHTML = `
+      ${product.id ? `<span class="product-number">#${product.id}</span>` : ""}
+      <img src="${product.image}" alt="${product.name}" class="product-image" />
+      <p class="product-name">${product.name}</p>
+      <button class="buy-btn">Buy Now</button>
+    `;
+
+    const image = card.querySelector(".product-image");
+    const button = card.querySelector(".buy-btn");
+
+    if (product.isCombo && comboProducts[product.id]) {
+      const showCombo = () => {
+        animatePageTransition(() => {
+          renderProducts(comboProducts[product.id], true);
+          history.pushState({ page: "combo", comboId: product.id }, "Combo", `#combo-${product.id}`);
+        });
+      };
+      image.addEventListener("click", showCombo);
+      button.addEventListener("click", showCombo);
+    } else if (product.link) {
+      const openLink = () => window.open(product.link, "_blank");
+      image.addEventListener("click", openLink);
+      button.addEventListener("click", openLink);
     }
 
-    list.forEach(product => {
-        const card = document.createElement("div");
-        card.className = "card";
-
-        card.innerHTML = `
-            ${product.id ? `<span class="product-number">#${product.id}</span>` : ""}
-            <img src="${product.image}" alt="${product.name}" class="product-image" />
-            <p class="product-name">${product.name}</p>
-            <button class="buy-btn">Buy Now</button>
-        `;
-
-        const image = card.querySelector(".product-image");
-        const button = card.querySelector(".buy-btn");
-
-        if (product.isCombo && comboProducts[product.id]) {
-            const showCombo = () => {
-                animatePageTransition(() => {
-                    renderProducts(comboProducts[product.id], true); // hide header on combos
-                    history.pushState({ page: "combo", comboId: product.id }, "Combo Products", `#combo-${product.id}`);
-                });
-            };
-            image.addEventListener("click", showCombo);
-            button.addEventListener("click", showCombo);
-        } else if (product.link) {
-            const openLink = () => window.open(product.link, "_blank");
-            image.addEventListener("click", openLink);
-            button.addEventListener("click", openLink);
-        }
-
-        container.appendChild(card);
-    });
+    container.appendChild(card);
+  });
 }
-
 
 // =====================
 // Filter by Category
 // =====================
 function filterByCategory(category) {
-    if (category === "all") {
-        animatePageTransition(() => {
-            renderProducts(products);
-            history.pushState({ page: "home" }, "Home", "#home");
-        });
-    } else {
-        const filtered = products.filter(p => p.category === category);
-        animatePageTransition(() => {
-            renderProducts(filtered);
-            history.pushState({ page: category }, category.charAt(0).toUpperCase() + category.slice(1), `#${category}`);
-        });
-    }
+  if (category === "all") {
+    animatePageTransition(() => {
+      renderProducts(products);
+      history.pushState({ page: "home" }, "Home", "#home");
+    });
+  } else {
+    const filtered = products.filter(p => p.category === category);
+    animatePageTransition(() => {
+      renderProducts(filtered);
+      history.pushState({ page: category }, category, `#${category}`);
+    });
+  }
 }
 
 // =====================
 // Search Products
 // =====================
 function filterProducts() {
-    const searchValue = document.getElementById("search").value.toLowerCase();
-    const filtered = products.filter(p =>
-        p.name.toLowerCase().includes(searchValue) || (p.id && p.id.toString().includes(searchValue))
-    );
-    animatePageTransition(() => renderProducts(filtered));
+  const searchValue = document.getElementById("search").value.toLowerCase();
+  const filtered = products.filter(p =>
+    p.name.toLowerCase().includes(searchValue) || (p.id && p.id.toString().includes(searchValue))
+  );
+  animatePageTransition(() => renderProducts(filtered));
 }
 
 // =====================
-// Show Home Page
+// Home Page
 // =====================
 function showHomePage() {
-    animatePageTransition(() => {
-        renderProducts(products);
-        document.getElementById("search").value = "";
-        history.replaceState({ page: "home" }, "Home", "#home");
-    });
+  animatePageTransition(() => {
+    renderProducts(products);
+    document.getElementById("search").value = "";
+    history.replaceState({ page: "home" }, "Home", "#home");
+  });
 }
 
 // =====================
-// Handle browser back/forward
+// Handle Browser Back/Forward
 // =====================
 window.onpopstate = function(event) {
-    if (event.state) {
-        if (event.state.page === "combo" && event.state.comboId) {
-            animatePageTransition(() => renderProducts(comboProducts[event.state.comboId]));
-        } else if (event.state.page === "home" || event.state.page === "all") {
-            showHomePage();
-        } else {
-            filterByCategory(event.state.page);
-        }
+  if (event.state) {
+    if (event.state.page === "combo" && event.state.comboId) {
+      renderProducts(comboProducts[event.state.comboId], true);
+    } else if (event.state.page === "home") {
+      showHomePage();
     } else {
-        showHomePage();
+      filterByCategory(event.state.page);
     }
+  } else {
+    showHomePage();
+  }
 };
 
 // =====================
-// Initialize Page
+// Init
 // =====================
 window.onload = function() {
-    history.replaceState({ page: "home" }, "Home", "#home");
-    renderProducts(products);
-    document.body.style.opacity = 1; // ensure body visible initially
+  history.replaceState({ page: "home" }, "Home", "#home");
+  renderProducts(products);
+  document.body.style.opacity = 1;
 };
-
-
-
-
-
-
-
-
-
-
-
-
-
