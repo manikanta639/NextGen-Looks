@@ -21,7 +21,7 @@ const products = [
         name: "Casual Shirt", 
         category: "shirts", 
         image: "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/2025/APRIL/30/WH0feuaa_d72aa9d526da417d8db14ebe0573a2db.jpg", 
-        link: "https://fkrt.co/U6hTEL" 
+        link: "http://bit.ly/3IUSnua" 
     },
     
     { 
@@ -29,7 +29,7 @@ const products = [
         name: "Checked Casual Shirt", 
         category: "shirts", 
         image: "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/2025/JANUARY/30/DlXJN34m_f0721222f4cd4ee9ba90b5a3942918e3.jpg", 
-        link: "https://fkrt.co/U6hTEL" 
+        link: "http://bit.ly/4mOGVhA" 
     },
 /*
 {
@@ -166,6 +166,7 @@ const comboProducts = {
 ]
 */
 };
+
 // =====================
 // Page Animation Helpers
 // =====================
@@ -180,18 +181,23 @@ function animatePageTransition(callback) {
 }
 
 // =====================
-// Hide/Show Header
+// Hide/Show Header Above Search Bar
 // =====================
 function toggleHeaderVisibility(show) {
+    // Header (logo + title)
     const header = document.getElementById("site-header");
+    // Shop Now button container
+    const shopNowDiv = document.querySelector(".cta-btn")?.parentElement;
+
     if (header) header.style.display = show ? "block" : "none";
+    if (shopNowDiv) shopNowDiv.style.display = show ? "block" : "none";
 }
 
 // =====================
 // Render Products
 // =====================
 function renderProducts(list, hideHeader = false) {
-    toggleHeaderVisibility(!hideHeader);
+    toggleHeaderVisibility(!hideHeader); // hide header if needed
     const container = document.getElementById("product-container");
     container.innerHTML = "";
     container.scrollTop = 0;
@@ -218,24 +224,22 @@ function renderProducts(list, hideHeader = false) {
         if (product.isCombo && comboProducts[product.id]) {
             const showCombo = () => {
                 animatePageTransition(() => {
-                    renderProducts(comboProducts[product.id], true);
+                    renderProducts(comboProducts[product.id], true); // hide header on combos
                     history.pushState({ page: "combo", comboId: product.id }, "Combo Products", `#combo-${product.id}`);
                 });
             };
             image.addEventListener("click", showCombo);
             button.addEventListener("click", showCombo);
         } else if (product.link) {
-            const openRedirect = () => {
-                const encodedLink = encodeURIComponent(product.link);
-                window.location.href = `redirect.html?link=${encodedLink}`;
-            };
-            image.addEventListener("click", openRedirect);
-            button.addEventListener("click", openRedirect);
+            const openLink = () => window.open(product.link, "_blank");
+            image.addEventListener("click", openLink);
+            button.addEventListener("click", openLink);
         }
 
         container.appendChild(card);
     });
 }
+
 
 // =====================
 // Filter by Category
@@ -278,12 +282,12 @@ function showHomePage() {
 }
 
 // =====================
-// Handle Back/Forward
+// Handle browser back/forward
 // =====================
 window.onpopstate = function(event) {
     if (event.state) {
         if (event.state.page === "combo" && event.state.comboId) {
-            animatePageTransition(() => renderProducts(comboProducts[event.state.comboId], true));
+            animatePageTransition(() => renderProducts(comboProducts[event.state.comboId]));
         } else if (event.state.page === "home" || event.state.page === "all") {
             showHomePage();
         } else {
@@ -300,7 +304,16 @@ window.onpopstate = function(event) {
 window.onload = function() {
     history.replaceState({ page: "home" }, "Home", "#home");
     renderProducts(products);
-    document.body.style.opacity = 1;
+    document.body.style.opacity = 1; // ensure body visible initially
 };
+
+
+
+
+
+
+
+
+
 
 
