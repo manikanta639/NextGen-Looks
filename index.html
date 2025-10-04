@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>NG Deals</title>
+  <title>NEXTGEN LOOKS</title>
   <link rel="icon" type="image/png" href="NG.png">
   <style>
     body {
@@ -27,8 +27,8 @@
       margin-bottom: 40px;
     }
     button {
-      background: #4285F4;
-      color: white;
+      background: #fbff4d;
+      color: black;
       border: none;
       font-size: 20px;
       padding: 15px 30px;
@@ -49,10 +49,10 @@
 <body>
 
   <img src="NEXTGEN LOOKS.png" alt="Logo" class="logo">
-  <h1>NG Deals</h1>
+  <h1>NEXTGEN LOOKS</h1>
 
   <button onclick="openShop()">Open Shop</button>
-  <p>Click the button above to open our shop in the best browser for your device!</p>
+  
 
   <script>
     function openShop() {
@@ -60,16 +60,17 @@
 
       if (/android/i.test(userAgent)) {
         // Android → Open Chrome
-        window.location.href = "intent://ngdeals.netlify.app/products.html/#Intent;scheme=https;package=com.android.chrome;end";
+        window.location.href = "intent://nextgenlooks.netlify.app/products.html/#Intent;scheme=https;package=com.android.chrome;end";
       } else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
         // iOS → Open Safari (default browser)
-        window.location.href = "https://ngdeals.netlify.app/products.html";
+        window.location.href = "https://nextgenlooks.netlify.app/products.html";
       } else {
         // Other devices → open normally
-        window.location.href = "https://ngdeals.netlify.app/products.html";
+        window.location.href = "https://nextgenlooks.netlify.app/products.html";
       }
     }
   </script>
 
 </body>
 </html>
+
