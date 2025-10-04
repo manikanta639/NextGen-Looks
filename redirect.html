@@ -1,57 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="icon" type="image" href="NG.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Redirecting...</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background: black;
-            color: white;
-            text-align: center;
-            padding: 50px;
-        }
-        .redirect-btn {
-            padding: 15px 30px;
-            background: #fbff4d;
-            color: black;
-            font-weight: bold;
-            border: none;
-            border-radius: 20px;
-            cursor: pointer;
-            font-size: 16px;
-            margin-top: 20px;
-            transition: 0.3s;
-        }
-        .redirect-btn:hover {
-            background: #e0e642;
-            transform: scale(1.05);
-        }
-    </style>
+    <title>NextGen Looks</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Almost There!</h1>
-    <p>Click below to go to the product page.</p>
-    <button class="redirect-btn" id="goProduct">Go to Product</button>
 
-    <script>
-        // Read affiliate link from URL
-        const params = new URLSearchParams(window.location.search);
-        const link = params.get('link');
+    <!-- Logo + Title -->
+    <header id="site-header">
+        <img src="NEXTGEN LOOKS.png" alt="Logo" class="logo" style="border-radius: 10px;">
+        <h1>NextGen Looks</h1>
+    </header>
 
-        const btn = document.getElementById('goProduct');
-        if(link) {
-            btn.addEventListener('click', () => {
-                window.open(link, '_blank'); // open affiliate link in new tab
-            });
-        } else {
-            btn.disabled = true;
-            btn.innerText = "Link not found!";
-        }
+    <!-- Shop Now Button -->
+    <div>
+        <a href="index2.html" target="_blank">
+            <button class="cta-btn">Shop Now</button>
+        </a>
+    </div>
 
-        // Optional: Auto-redirect after 2 seconds
-        // setTimeout(() => { if(link) window.open(link, '_blank'); }, 2000);
-    </script>
+    <!-- Sticky Search Bar -->
+    <div class="search-container">
+        <input type="text" id="search" placeholder="Search by name or number..." oninput="filterProducts()">
+    </div>
+
+    <!-- ✅ Categories -->
+    <div class="categories">
+        <button onclick="filterByCategory('all')">All</button>
+        <button onclick="filterByCategory('combos')">Combos</button>
+        <button onclick="filterByCategory('shirts')">Shirts</button>
+        <button onclick="filterByCategory('pants')">Pants</button>
+        <button onclick="filterByCategory('shoes')">Shoes</button>
+        <button onclick="filterByCategory('watches')">Watches</button>
+        <button onclick="filterByCategory('others')">Others</button>
+    </div>
+
+    <!-- Subcategories will appear here dynamically -->
+    <div id="subcategory-container"></div>
+
+    <!-- Products -->
+    <div id="product-container" class="product-grid"></div>
+
+    <script src="script.js"></script>
 </body>
 </html>
+
+
+
