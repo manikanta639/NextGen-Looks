@@ -1,6 +1,13 @@
 // Sample Product Data
 const products = [
     { 
+        id: 6, 
+        name: "Lee Cooper", 
+        category: "watches", 
+        image: "https://rukminim2.flixcart.com/image/832/832/xif0q/watch/t/m/h/-original-imahftq4tu6ewft2.jpeg?q=70&crop=false", 
+        link: "https://fkrt.co/rmZMWb"
+    },
+    { 
         id: 5, 
         name: "Shirt", 
         category: "shirts", 
@@ -313,4 +320,5 @@ window.onload = function() {
   renderProducts(products);
   document.body.style.opacity = 1;
 };
+
 
