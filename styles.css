@@ -205,7 +205,7 @@ header h1 {
     width: 100%;                      /* fill card width */
     height: 300px;                     /* desktop height */
     object-fit: cover;                 /* crop to fill container */
-    object-position: top;              /* show face + hands */
+    object-position: center;              /* show face + hands */
     border-radius: 8px; /* top-left, top-right, bottom-right, bottom-left */
     margin-bottom: 10px;
     display: block;
@@ -336,6 +336,7 @@ header h1 {
         flex: 0 0 auto; /* ✅ Prevent shrinking */
     }
 }
+
 
 
 
