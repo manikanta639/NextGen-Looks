@@ -1,5 +1,14 @@
 // Sample Product Data
 const products = [
+    
+    { 
+        id: 7, 
+        name: "Sweat Shirt", 
+        category: "shirts", 
+        image: "", 
+        link: "" ,
+        isCombo: true
+    },
     { 
         id: 6, 
         name: "Lee Cooper", 
@@ -100,7 +109,47 @@ const products = [
 
 // Combo Products Data (Scalable)
 const comboProducts = {
-3: [
+7: [
+  {
+    name: "Shirt 1",
+    image: "https://rukminim2.flixcart.com/image/832/832/xif0q/sweatshirt/s/x/9/l-sszip1-plain-skin-fashion-and-youth-original-imah542vygdd4juu.jpeg?q=70&crop=false",
+    link: "https://fkrt.co/0uATM5"
+  },
+  {
+    name: "Shirt 2",
+    image: "https://rukminim2.flixcart.com/image/832/832/xif0q/sweatshirt/a/3/5/l-sszip1-plain-s-fashion-and-youth-original-imah542vxpkaa4ba.jpeg?q=70&crop=false",
+    link: "https://fkrt.co/2pMkhk"
+  },
+  {
+    name: "Shirt 3",
+    image: "https://rukminim2.flixcart.com/image/832/832/xif0q/sweatshirt/7/6/n/s-sszip1-plain-black-fashion-and-youth-original-imah52fhz6fax55z.jpeg?q=70&crop=false",
+    link: "https://fkrt.co/SMRz0j"
+  },
+  {
+    name: "Shirt 4",
+    image: "https://rukminim2.flixcart.com/image/832/832/xif0q/sweatshirt/s/u/7/m-sszip1-plain-maroon-fashion-and-youth-original-imah52g3vfr8xwtz.jpeg?q=70&crop=false",
+    link: "https://fkrt.co/cClDq5"
+  },
+  {
+    name: "Shirt 5",
+    image: "https://rukminim2.flixcart.com/image/832/832/xif0q/sweatshirt/e/b/n/l-sszip21-plain-peach-fashion-and-youth-original-imahfdt48ftujb4s.jpeg?q=70&crop=false",
+    link: "https://fkrt.co/GdWJov"
+  },
+    {
+    name: "Shirt 6",
+    image: "https://rukminim2.flixcart.com/image/832/832/xif0q/sweatshirt/d/s/d/xxl-sszip1-plain-navy-fashion-and-youth-original-imah52g56q8maxwg.jpeg?q=70&crop=false",
+    link: "https://fkrt.co/ZuWRHs"
+  },{
+    name: "Shirt 7",
+    image: "https://rukminim2.flixcart.com/image/832/832/xif0q/sweatshirt/o/1/0/l-sszip1-plain-dg-fashion-and-youth-original-imah542vj85bznwc.jpeg?q=70&crop=false",
+    link: "https://fkrt.co/afghc4"
+  },{
+    name: "Shirt 8",
+    image: "https://rukminim2.flixcart.com/image/832/832/xif0q/sweatshirt/q/u/t/xxl-sszip1-plain-beige-fashion-and-youth-original-imah52g54tqbjagt.jpeg?q=70&crop=false",
+    link: "https://fkrt.co/aoMgnA"
+  }
+],
+    3: [
   {
     name: "Shoe 1",
     image: "https://rukminim2.flixcart.com/image/832/832/xif0q/shoe/a/c/o/-original-imahgcstr7c9y6hh.jpeg?q=70&crop=false",
@@ -320,5 +369,6 @@ window.onload = function() {
   renderProducts(products);
   document.body.style.opacity = 1;
 };
+
 
 
