@@ -5,7 +5,7 @@ const products = [
         id: 7, 
         name: "Sweat Shirt", 
         category: "shirts", 
-        image: "", 
+        image: "https://rukminim2.flixcart.com/image/832/832/xif0q/sweatshirt/s/x/9/l-sszip1-plain-skin-fashion-and-youth-original-imah542vygdd4juu.jpeg?q=70&crop=false", 
         link: "" ,
         isCombo: true
     },
@@ -369,6 +369,7 @@ window.onload = function() {
   renderProducts(products);
   document.body.style.opacity = 1;
 };
+
 
 
 
