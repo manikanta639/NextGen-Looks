@@ -2,6 +2,14 @@
 const products = [
     
     { 
+        id: 8, 
+        name: "Stylish Glasses", 
+        category: "others", 
+        image: "https://rukminim2.flixcart.com/image/832/832/xif0q/shopsy-sunglass/9/e/4/55-gk-biground-silver-gynk-original-imah89aesm4pg9rz.jpeg?q=70&crop=false", 
+        link: "" ,
+        isCombo: true
+    },
+    { 
         id: 7, 
         name: "Sweat Shirt", 
         category: "shirts", 
@@ -54,62 +62,55 @@ const products = [
         image: "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/2025/JANUARY/30/DlXJN34m_f0721222f4cd4ee9ba90b5a3942918e3.jpg", 
         link: "https://myntr.in/yPXgYo" 
     },
-/*
-{
-  id: 31,
-  name: "Formal Pants",
-  category: "pants",
-  image: "https://m.media-amazon.com/images/I/31TEA0qrUBL._SX342_SY445_QL70_FMwebp_.jpg",
-  link: "https://amzn.to/4nRHt7w"
-},
-{
-  id: 41,
-  name: "Running Shoes",
-  category: "shoes",
-  image: "https://m.media-amazon.com/images/I/31TEA0qrUBL._SX342_SY445_QL70_FMwebp_.jpg",
-  link: "https://amzn.to/4nRHt7w"
-},
-{
-  id: 51,
-  name: "Gift Combo Pack",
-  category: "combos",
-  image: "https://m.media-amazon.com/images/I/31TEA0qrUBL._SX342_SY445_QL70_FMwebp_.jpg",
-  isCombo: true
-},
-{
-  id: 61,
-  name: "Gift Combo Pack 2",
-  category: "combos",
-  image: "https://m.media-amazon.com/images/I/31TEA0qrUBL._SX342_SY445_QL70_FMwebp_.jpg",
-  isCombo: true
-},
-{
-  id: 71,
-  name: "Gift Combo Pack 3",
-  category: "combos",
-  image: "https://m.media-amazon.com/images/I/31TEA0qrUBL._SX342_SY445_QL70_FMwebp_.jpg",
-  isCombo: true
-},
-{
-  id: 81,
-  name: "Smart Watch",
-  category: "watches",
-  image: "https://m.media-amazon.com/images/I/31TEA0qrUBL._SX342_SY445_QL70_FMwebp_.jpg",
-  link: "https://amzn.to/4nRHt7w"
-},
-{
-  id: 91,
-  name: "Gift Combo Pack 3",
-  category: "combos",
-  image: "https://m.media-amazon.com/images/I/31TEA0qrUBL._SX342_SY445_QL70_FMwebp_.jpg",
-  isCombo: true
-}
-*/
+
 ];
 
 // Combo Products Data (Scalable)
 const comboProducts = {
-7: [
+8: [
+  {
+    name: "Glasses 1",
+    image: "https://rukminim2.flixcart.com/image/832/832/xif0q/shopsy-sunglass/9/e/4/55-gk-biground-silver-gynk-original-imah89aesm4pg9rz.jpeg?q=70&crop=false",
+    link: "https://fkrt.co/aJ5KuB"
+  },
+    {
+    name: "Glasses 2",
+    image: "https://rukminim2.flixcart.com/image/832/832/xif0q/sunglass/e/u/c/this-product-is-sold-as-free-size-by-the-brand-commando-57-original-imahdhpstv2chqvj.jpeg?q=70&crop=false",
+    link: "https://fkrt.co/4YQFtN"
+  },
+    {
+    name: "Glasses 3",
+    image: "https://rukminim2.flixcart.com/image/832/832/xif0q/sunglass/s/m/i/medium-pathan-sunglass-16r-sunveil-original-imahgnbju6cazg3v.jpeg?q=70&crop=false",
+    link: "https://fkrt.co/OpHymC"
+  },
+    {
+    name: "Glasses 4",
+    image: "https://rukminim2.flixcart.com/image/832/832/xif0q/sunglass/h/g/j/-original-imahg3f4xygdtmsz.jpeg?q=70&crop=false",
+    link: "https://fkrt.co/4i5HGH"
+  },
+    {
+    name: "Glasses 5",
+    image: "https://rukminim2.flixcart.com/image/832/832/xif0q/sunglass/a/w/i/m-sunglasses-18-woggles-original-imahekdd8f3zqtzy.jpeg?q=70&crop=false",
+    link: "https://fkrt.co/3FYLMY"
+  },
+    {
+    name: "Glasses 6",
+    image: "https://rukminim2.flixcart.com/image/832/832/xif0q/sunglass/l/a/w/54-138628-vincent-chase-original-imahyvspscfehren.jpeg?q=70&crop=false",
+    link: "https://fkrt.co/bS8AkT"
+  },
+    {
+    name: "Glasses 7",
+    image: "https://rukminim2.flixcart.com/image/832/832/xif0q/sunglass/c/k/d/48-tak-bhai-842-black-burg-original-imahfp5rhqgmc5bc.jpeg?q=70&crop=false",
+    link: "https://fkrt.co/8A91LK"
+  },
+    {
+    name: "Glasses 8",
+    image: "https://rukminim2.flixcart.com/image/832/832/xif0q/sunglass/z/s/8/55-35-hayden-haiza-original-imahfqn5yyubgpcv.jpeg?q=70&crop=false",
+    link: "https://fkrt.co/otIw77"
+  }
+],
+    
+    7: [
   {
     name: "Shirt 1",
     image: "https://rukminim2.flixcart.com/image/832/832/xif0q/sweatshirt/s/x/9/l-sszip1-plain-skin-fashion-and-youth-original-imah542vygdd4juu.jpeg?q=70&crop=false",
@@ -369,6 +370,7 @@ window.onload = function() {
   renderProducts(products);
   document.body.style.opacity = 1;
 };
+
 
 
 
