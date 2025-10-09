@@ -118,7 +118,7 @@ const comboProducts = {
   },
     {
     name: "Watch 9",
-    image: "https://rukminim2.flixcart.com/image/832/832/xif0q/watch/5/1/s/1-ls3315-limestone-men-original-imahgceajwpd7znp.jpeg?q=70&crop=false",
+    image: "https://rukminim2.flixcart.com/image/832/832/xif0q/watch/s/f/v/1-ls3315-limestone-men-original-imahgde5agektyhs.jpeg?q=70&crop=false",
     link: "https://fkrt.co/93M57a"
   }
     
@@ -426,6 +426,7 @@ window.onload = function() {
   renderProducts(products);
   document.body.style.opacity = 1;
 };
+
 
 
 
