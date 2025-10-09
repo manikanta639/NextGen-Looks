@@ -2,6 +2,14 @@
 const products = [
     
     { 
+        id: 9, 
+        name: "Watch", 
+        category: "watches", 
+        image: "https://rukminim2.flixcart.com/image/832/832/xif0q/watch/s/n/n/1-avm0031-americanviber-men-women-original-imahcndcj4zbh9yj.jpeg?q=70&crop=false", 
+        link: "" ,
+        isCombo: true
+    },
+    { 
         id: 8, 
         name: "Stylish Glasses", 
         category: "others", 
@@ -67,7 +75,55 @@ const products = [
 
 // Combo Products Data (Scalable)
 const comboProducts = {
-8: [
+9: [
+  {
+    name: "Watch 1",
+    image: "https://rukminim2.flixcart.com/image/832/832/xif0q/watch/s/n/n/1-avm0031-americanviber-men-women-original-imahcndcj4zbh9yj.jpeg?q=70&crop=false",
+    link: "https://fkrt.co/cr2daQ"
+  },
+    {
+    name: "Watch 2",
+    image: "https://rukminim2.flixcart.com/image/832/832/xif0q/watch/d/d/a/1-csio-604-limestone-men-original-imahghchdfhpbbsh.jpeg?q=70&crop=false",
+    link: "https://fkrt.co/i3O6g9"
+  },
+    {
+    name: "Watch 3",
+    image: "https://rukminim2.flixcart.com/image/832/832/xif0q/watch/p/g/d/1-pe-black-dm0011-americanviber-men-original-imahbybrthxfe7qe.jpeg?q=70&crop=false",
+    link: "https://fkrt.co/y6Shzr"
+  },
+    {
+    name: "Watch 4",
+    image: "https://rukminim2.flixcart.com/image/832/832/xif0q/watch/c/1/h/1-csio-602-limestone-men-original-imahgg85rhabzzgz.jpeg?q=70&crop=false",
+    link: "https://fkrt.co/ed7qOK"
+  },
+    {
+    name: "Watch 5",
+    image: "https://rukminim2.flixcart.com/image/832/832/xif0q/watch/4/6/f/1-seamaster-avm0032-americanviber-men-original-imahcqm8h6ghcvpy.jpeg?q=70&crop=false",
+    link: "https://fkrt.co/L6IcAX"
+  },
+    {
+    name: "Watch 6",
+    image: "https://rukminim2.flixcart.com/image/832/832/xif0q/watch/w/q/e/drm0028-daniel-radcliffe-men-original-imah89kynr8dmaen.jpeg?q=70&crop=false",
+    link: "https://fkrt.co/eyQOE5"
+  },
+    {
+    name: "Watch 7",
+    image: "https://rukminim2.flixcart.com/image/832/832/xif0q/watch/f/1/v/1-square-roman-figure-luxury-dial-analog-watch-for-men-s-original-imahy7azmzhdhupg.jpeg?q=70&crop=false",
+    link: "https://fkrt.co/g2IaP9"
+  },
+    {
+    name: "Watch 8",
+    image: "https://rukminim2.flixcart.com/image/832/832/xif0q/watch/u/0/n/-original-imahfspud7ezmxau.jpeg?q=70&crop=false",
+    link: "https://fkrt.co/3ODM2E"
+  },
+    {
+    name: "Watch 9",
+    image: "https://rukminim2.flixcart.com/image/832/832/xif0q/watch/5/1/s/1-ls3315-limestone-men-original-imahgceajwpd7znp.jpeg?q=70&crop=false",
+    link: "https://fkrt.co/93M57a"
+  }
+    
+],
+    8: [
   {
     name: "Glasses 1",
     image: "https://rukminim2.flixcart.com/image/832/832/xif0q/shopsy-sunglass/9/e/4/55-gk-biground-silver-gynk-original-imah89aesm4pg9rz.jpeg?q=70&crop=false",
@@ -370,6 +426,7 @@ window.onload = function() {
   renderProducts(products);
   document.body.style.opacity = 1;
 };
+
 
 
 
