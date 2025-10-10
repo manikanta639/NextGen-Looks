@@ -84,13 +84,13 @@ const products = [
 // Combo Products Data (Scalable)
 const comboProducts = {
     10: [
-    {name: "Watch 1",image: "https://rukminim2.flixcart.com/image/832/832/xif0q/watch/f/u/v/1-spm01-spinner-men-original-imahgfcfmrxyvzzd.jpeg?q=70&crop=false",link: "https://fkrt.co/y7Y5rd"},
-    {name: "Watch 2",image: "https://rukminim2.flixcart.com/image/832/832/xif0q/watch/v/k/s/1-spm01-spinner-men-original-imahesvhzraft57x.jpeg?q=70&crop=false",link: "https://fkrt.co/J6uNmz"},
-    {name: "Watch 3",image: "https://rukminim2.flixcart.com/image/832/832/xif0q/watch/a/1/c/1-sp01-spinner-men-original-imahesvzfjkc6yer.jpeg?q=70&crop=false",link: "https://fkrt.co/m32DAi"},
-    {name: "Watch 4",image: "https://rukminim2.flixcart.com/image/832/832/xif0q/watch/q/x/b/1-sp01-spinner-men-original-imahesvqrzxhd7ez.jpeg?q=70&crop=false",link: "https://fkrt.co/MGNR75"},
-    {name: "Watch 5",image: "https://rukminim2.flixcart.com/image/832/832/xif0q/watch/z/n/6/1-spm01-spinner-men-original-imahfyktxa3ffkb9.jpeg?q=70&crop=false",link: "https://fkrt.co/BoPuOf"},
-    {name: "Watch 6",image: "https://rukminim2.flixcart.com/image/832/832/xif0q/watch/q/a/g/1-spm01-spinner-men-original-imahfbyyyvvgyuvc.jpeg?q=70&crop=false",link: "https://fkrt.co/POgD9c"}
-    ],
+   {name: "Watch 1",image: "https://rukminim2.flixcart.com/image/832/832/xif0q/watch/f/u/v/1-spm01-spinner-men-original-imahgfcfmrxyvzzd.jpeg?q=70&crop=false",link: "https://fkrt.co/y7Y5rd"},
+   {name: "Watch 2",image: "https://rukminim2.flixcart.com/image/832/832/xif0q/watch/v/k/s/1-spm01-spinner-men-original-imahesvhzraft57x.jpeg?q=70&crop=false",link: "https://fkrt.co/J6uNmz"},
+   {name: "Watch 3",image: "https://rukminim2.flixcart.com/image/832/832/xif0q/watch/a/1/c/1-sp01-spinner-men-original-imahesvzfjkc6yer.jpeg?q=70&crop=false",link: "https://fkrt.co/m32DAi"},
+   {name: "Watch 4",image: "https://rukminim2.flixcart.com/image/832/832/xif0q/watch/q/x/b/1-sp01-spinner-men-original-imahesvqrzxhd7ez.jpeg?q=70&crop=false",link: "https://fkrt.co/MGNR75"},
+   {name: "Watch 5",image: "https://rukminim2.flixcart.com/image/832/832/xif0q/watch/z/n/6/1-spm01-spinner-men-original-imahfyktxa3ffkb9.jpeg?q=70&crop=false",link: "https://fkrt.co/BoPuOf"},
+   {name: "Watch 6",image: "https://rukminim2.flixcart.com/image/832/832/xif0q/watch/q/a/g/1-spm01-spinner-men-original-imahfbyyyvvgyuvc.jpeg?q=70&crop=false",link: "https://fkrt.co/POgD9c"}
+],
     9: [
   {
     name: "Watch 1",
@@ -409,6 +409,7 @@ window.onload = function() {
   renderProducts(products);
   document.body.style.opacity = 1;
 };
+
 
 
 
