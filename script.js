@@ -2,6 +2,14 @@
 const products = [
     
     { 
+        id: 10, 
+        name: "Spinning Watch", 
+        category: "watches", 
+        image: "https://rukminim2.flixcart.com/image/832/832/xif0q/watch/f/u/v/1-spm01-spinner-men-original-imahgfcfmrxyvzzd.jpeg?q=70&crop=false", 
+        link: "" ,
+        isCombo: true
+    },
+    { 
         id: 9, 
         name: "Watch", 
         category: "watches", 
@@ -75,7 +83,15 @@ const products = [
 
 // Combo Products Data (Scalable)
 const comboProducts = {
-9: [
+    10: [
+    {name: "Watch 1",image: "https://rukminim2.flixcart.com/image/832/832/xif0q/watch/f/u/v/1-spm01-spinner-men-original-imahgfcfmrxyvzzd.jpeg?q=70&crop=false",link: "https://fkrt.co/y7Y5rd"},
+    {name: "Watch 2",image: "https://rukminim2.flixcart.com/image/832/832/xif0q/watch/v/k/s/1-spm01-spinner-men-original-imahesvhzraft57x.jpeg?q=70&crop=false",link: "https://fkrt.co/J6uNmz"},
+    {name: "Watch 3",image: "https://rukminim2.flixcart.com/image/832/832/xif0q/watch/a/1/c/1-sp01-spinner-men-original-imahesvzfjkc6yer.jpeg?q=70&crop=false",link: "https://fkrt.co/m32DAi"},
+    {name: "Watch 4",image: "https://rukminim2.flixcart.com/image/832/832/xif0q/watch/q/x/b/1-sp01-spinner-men-original-imahesvqrzxhd7ez.jpeg?q=70&crop=false",link: "https://fkrt.co/MGNR75"},
+    {name: "Watch 5",image: "https://rukminim2.flixcart.com/image/832/832/xif0q/watch/z/n/6/1-spm01-spinner-men-original-imahfyktxa3ffkb9.jpeg?q=70&crop=false",link: "https://fkrt.co/BoPuOf"},
+    {name: "Watch 6",image: "https://rukminim2.flixcart.com/image/832/832/xif0q/watch/q/a/g/1-spm01-spinner-men-original-imahfbyyyvvgyuvc.jpeg?q=70&crop=false",link: "https://fkrt.co/POgD9c"}
+    ],
+    9: [
   {
     name: "Watch 1",
     image: "https://rukminim2.flixcart.com/image/832/832/xif0q/watch/s/n/n/1-avm0031-americanviber-men-women-original-imahcndcj4zbh9yj.jpeg?q=70&crop=false",
@@ -256,39 +272,6 @@ const comboProducts = {
   }
 ],
 /*-------------------------------------------------------------------------------------------------------------*/    
-/*7: [
-  {
-    id: 301,
-    name: "Combo Hat + Shirt",
-    image: "https://m.media-amazon.com/images/I/31TEA0qrUBL._SX342_SY445_QL70_FMwebp_.jpg",
-    link: "https://amzn.to/4nRHt7w"
-  },
-  {
-    id: 302,
-    name: "Combo Belt + Pants",
-    image: "https://m.media-amazon.com/images/I/41TCyNn0GDL._SX342_SY445_.jpg",
-    link: "https://amzn.to/4nRHt7w"
-  }
-],
-9: [
-  {
-    id: 301,
-    name: "Combo Hat + Shirt",
-    image: "https://m.media-amazon.com/images/I/31TEA0qrUBL._SX342_SY445_QL70_FMwebp_.jpg",
-    link: "https://amzn.to/4nRHt7w"
-  },
-  {
-    id: 302,
-    name: "Combo Belt + Pants",
-    image: "https://m.media-amazon.com/images/I/41TCyNn0GDL._SX342_SY445_.jpg",
-    link: "https://amzn.to/4nRHt7w"
-  }
-]
-*/
-};
-
-
-
 
 
 
@@ -426,6 +409,7 @@ window.onload = function() {
   renderProducts(products);
   document.body.style.opacity = 1;
 };
+
 
 
 
