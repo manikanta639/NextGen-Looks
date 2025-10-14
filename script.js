@@ -4,7 +4,7 @@ const products = [
         id: 11, 
         name: "Combo", 
         category: "combos", 
-        image: "", 
+        image: "https://d3.indown.io/fetch?url=https%3A%2F%2Fscontent-cdg4-2.cdninstagram.com%2Fv%2Ft51.2885-15%2F564058066_17871832341454327_4669099439184615891_n.jpg%3Fstp%3Ddst-jpg_e35_p640x640_sh0.08_tt6%26efg%3DeyJ2ZW5jb2RlX3RhZyI6ImltYWdlX3VybGdlbi4xMDgweDE0NDAuc2RyLmY4Mjc4Ny5kZWZhdWx0X2ltYWdlLmMyIn0%26_nc_ht%3Dscontent-cdg4-2.cdninstagram.com%26_nc_cat%3D107%26_nc_oc%3DQ6cZ2QEGWAbjJPmwTCZqYrC_x1yF-9FHVIHFp_7GYvE8VyyV-r3zSoIMSA6S-7Pr44V_8U8%26_nc_ohc%3Dwi9KBjyo084Q7kNvwHXcC9m%26_nc_gid%3DTajfkF-12kAJVbLh78kQDw%26edm%3DAPs17CUBAAAA%26ccb%3D7-5%26oh%3D00_Afd5VsgAMi6HPc10df1M-j6JMKoP1lX2PzmcVf9G5-qyWg%26oe%3D68F43963%26_nc_sid%3D10d13b&is_download=0&expires=1760454311&link=https%3A%2F%2Fwww.instagram.com%2Fp%2FDPwAoO8kp1v%2F%3Futm_source%3Dig_web_copy_link&signature=e6124e87ee15683a28e623a37874e945341f35b7c092008c23a64f11b5bf90d7", 
         link: "" ,
         isCombo: true
     },
@@ -432,6 +432,7 @@ window.onload = function() {
   renderProducts(products);
   document.body.style.opacity = 1;
 };
+
 
 
 
