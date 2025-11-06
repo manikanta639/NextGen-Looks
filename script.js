@@ -98,7 +98,7 @@ const products = [
 
 // Combo Products Data (Scalable)
 const comboProducts = {
-11: [
+121: [
     {name: "Shirt 1",image: "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/2024/SEPTEMBER/23/vL9OIpVP_72ab4b78b0df47acbea79e0fa71b8f22.jpg",link: "Program1"},
     {name: "Shirt 2",image: "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/2024/SEPTEMBER/23/7iObIgXq_46fbd66e9caa4e59b295ba85fb3dad09.jpg",link: "https://myntr.in/L3bgHK"},
     {name: "Shirt 3",image: "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/25553720/2023/11/24/663a7b00-7d29-4f84-ac18-65705c0d4da61700802441762-Mens-Black-Corduroy-Oversize-Shirt-6421700802441328-1.jpg",link: "https://myntr.in/frtqf1"},
@@ -464,6 +464,7 @@ window.onload = function() {
   renderProducts(products);
   document.body.style.opacity = 1;
 };
+
 
 
 
