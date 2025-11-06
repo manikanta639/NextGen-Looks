@@ -1,6 +1,14 @@
 // Sample Product Data
 const products = [
     { 
+        id: 121, 
+        name: "Combo", 
+        category: "combos", 
+        image: "https://media.igram.world/get?__sig=GOptUZjoFmFoWASp4FZuwQ&__expires=1760461005&uri=https%3A%2F%2Fscontent-lga3-2.cdninstagram.com%2Fv%2Ft51.2885-15%2F564058066_17871832341454327_4669099439184615891_n.jpg%3Fstp%3Ddst-jpg_e15_fr_p1080x1080_tt6%26_nc_ht%3Dscontent-lga3-2.cdninstagram.com%26_nc_cat%3D107%26_nc_oc%3DQ6cZ2QGGHdMur1DixoS7qjd10oSDygj73t7PH8zH8dv2EzWlhEVyfzKxDgQpQYjgYc_C6X49b7louZUPFdQeRnR3d4aK%26_nc_ohc%3Dwi9KBjyo084Q7kNvwEcUV9Q%26_nc_gid%3DUtSiSFRssNHBQzrCwUm-jA%26edm%3DANTKIIoBAAAA%26ccb%3D7-5%26oh%3D00_AfeFBimiFWn9vTzBiYpnhPoeZJqcIsNfmnzv6a1uLrYIqA%26oe%3D68F43963%26_nc_sid%3Dd885a2&filename=564058066_17871832341454327_4669099439184615891_n.jpg", 
+        link: "" ,
+        isCombo: true
+    },
+    { 
         id: 11, 
         name: "Combo", 
         category: "combos", 
@@ -91,6 +99,30 @@ const products = [
 // Combo Products Data (Scalable)
 const comboProducts = {
 11: [
+    {name: "Shirt 1",image: "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/2024/SEPTEMBER/23/vL9OIpVP_72ab4b78b0df47acbea79e0fa71b8f22.jpg",link: "Program1"},
+    {name: "Shirt 2",image: "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/2024/SEPTEMBER/23/7iObIgXq_46fbd66e9caa4e59b295ba85fb3dad09.jpg",link: "https://myntr.in/L3bgHK"},
+    {name: "Shirt 3",image: "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/25553720/2023/11/24/663a7b00-7d29-4f84-ac18-65705c0d4da61700802441762-Mens-Black-Corduroy-Oversize-Shirt-6421700802441328-1.jpg",link: "https://myntr.in/frtqf1"},
+    {name: "Shirt 4",image: "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/25200304/2023/9/27/ae93b2b1-8a3a-41d8-b268-d608644398791695813199096NOBEROMenWhiteColourblockedTailoredJacket1.jpg",link: "https://myntr.in/AUHMUD"},
+    {name: "Shirt 5",image: "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/2025/APRIL/4/XJI15qut_862daca967b842b3a2088898887adb1d.jpg",link: "https://myntr.in/l9YBe2"},
+    {name: "Shirt 6",image: "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/2024/OCTOBER/30/DuOoY9me_1adfe29aea144413890706567bb724bb.jpg",link: "https://myntr.in/batShT"},
+    {name: "Pant 1",image: "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/2025/MARCH/4/Bx81yGt3_2af004d851ca417bbb0f48cb35df276c.jpg",link: "https://myntr.in/nMaWCD"},
+    {name: "Pant 2",image: "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/32757492/2025/4/18/cb9d7feb-0920-4aac-822f-85b3bbbe32431744979538398-Bene-Kleed-Men-Wide-Leg-Low-Distress-Jeans-1951744979538067-1.jpg",link: "https://myntr.in/792bWC"},
+    {name: "Pant 3",image: "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/2025/MAY/21/fUWfQo6d_04c07d4db9c54d4a8ed3210ae32ee4ed.jpg",link: "https://myntr.in/e9U6xW"},
+    {name: "Pant 4",image: "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/32242851/2025/1/7/669aefb5-7ed5-478f-b4b2-6f6618bcc7db1736257358854BeneKleedMenWideLegLowDistressLightFadeJeans1.jpg",link: "https://myntr.in/F3oBfP"},
+    {name: "Shoe 1",image: "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/2025/SEPTEMBER/27/PRVwgriY_5653b805d1824c8694d5a56055567c30.jpg",link: "https://myntr.in/Gy7tAQ"},
+    {name: "Shoe 2",image: "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/29563514/2024/5/21/2683c357-984c-49cb-85f7-18dd2b447ecd1716266587514MONKSTORYMenPUSlip-OnSneakers2.jpg",link: "https://myntr.in/AN4nmQ"}
+    ],
+
+
+
+
+
+
+
+
+
+    
+    11: [
     {name: "Shirt 1",image: "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/2024/SEPTEMBER/23/vL9OIpVP_72ab4b78b0df47acbea79e0fa71b8f22.jpg",link: "https://myntr.in/yOEMOS"},
     {name: "Shirt 2",image: "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/2024/SEPTEMBER/23/7iObIgXq_46fbd66e9caa4e59b295ba85fb3dad09.jpg",link: "https://myntr.in/L3bgHK"},
     {name: "Shirt 3",image: "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/25553720/2023/11/24/663a7b00-7d29-4f84-ac18-65705c0d4da61700802441762-Mens-Black-Corduroy-Oversize-Shirt-6421700802441328-1.jpg",link: "https://myntr.in/frtqf1"},
