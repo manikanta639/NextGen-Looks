@@ -1,0 +1,118 @@
+Aim: To implement Queue and Circular Queue.
+Program: Write a program to implement an Array based queue and perform Enqueue, Dequeue and Front.
+	Test Queue with 
+	Enqueue [10, 20, 30], 
+	Dequeue twice
+Program: To implement a circular queue(list-based) and perform Enqueue, Dequeue and Front.
+	Test Circular Queue with 
+	Enqueue [10, 20, 30], 
+	Dequeue twice
+	Enqueue 5
+Description:
+1.	This program implements an Array-Based Queue (Linear Queue) using Python lists following the FIFO principle. The Queue class provides essential operations:
+•	Enqueue: Add an element at the rear of the queue
+•	Dequeue: Remove and return the front element
+•	Front: View the front element without removing it
+•	isEmpty: Check if the queue is empty
+The program is tested by enqueueing values [10, 20, 30], performing two dequeue operations to remove 10 and 20, leaving 30 in the queue.
+2.	This program implements a Circular Queue using Python lists with a fixed size that efficiently handles wrap-around. The CircularQueue class provides operations:
+•	Enqueue: Add an element at the rear with overflow checking
+•	Dequeue: Remove and return the front element with underflow checking
+•	Front: View the front element without removing it
+•	isFull/isEmpty: Check queue status
+The circular queue uses front and rear pointers with modulo arithmetic to wrap around. The program is tested by enqueueing [10, 20, 30], dequeuing twice (removing 10 and 20), then enqueueing 5 to demonstrate the wrap-around feature.
+
+Code:
+# ----- Simple Queue -----
+class Queue:
+    def __init__(self):
+        self.q = []
+
+    def enqueue(self, item):
+        self.q.append(item)
+
+    def dequeue(self):
+        if len(self.q) == 0:
+            print("Queue is empty")
+        else:
+            print("Dequeued:", self.q.pop(0))
+
+    def display(self):
+        print("Queue:", self.q)
+
+# ----- Circular Queue -----
+class CircularQueue:
+    def __init__(self, size):
+        self.size = size
+        self.q = [None] * size
+        self.front = self.rear = -1
+
+    def enqueue(self, item):
+        if (self.rear + 1) % self.size == self.front:
+            print("Circular Queue is full")
+        else:
+            if self.front == -1:
+                self.front = 0
+            self.rear = (self.rear + 1) % self.size
+            self.q[self.rear] = item
+
+    def dequeue(self):
+        if self.front == -1:
+            print("Circular Queue is empty")
+        else:
+            print("Dequeued:", self.q[self.front])
+            if self.front == self.rear:
+                self.front = self.rear = -1
+            else:
+                self.front = (self.front + 1) % self.size
+
+    def display(self):
+        if self.front == -1:
+            print("Circular Queue is empty")
+        else:
+            print("Circular Queue:", end=" ")
+            i = self.front
+            while True:
+                print(self.q[i], end=" ")
+                if i == self.rear:
+                    break
+                i = (i + 1) % self.size
+            print()
+
+# ------------------ MAIN PROGRAM ------------------
+
+# Normal Queue
+print("=== Normal Queue ===")
+q = Queue()
+
+n = int(input("Enter number of elements to enqueue: "))
+for i in range(n):
+    val = int(input(f"Enter element {i+1}: "))
+    q.enqueue(val)
+q.display()
+
+d = int(input("Enter how many elements to dequeue: "))
+for i in range(d):
+    q.dequeue()
+q.display()
+
+# Circular Queue
+print("\n=== Circular Queue ===")
+size = int(input("Enter size of circular queue: "))
+cq = CircularQueue(size)
+
+n = int(input("Enter number of elements to enqueue: "))
+for i in range(n):
+    val = int(input(f"Enter element {i+1}: "))
+    cq.enqueue(val)
+cq.display()
+
+d = int(input("Enter how many elements to dequeue: "))
+for i in range(d):
+    cq.dequeue()
+cq.display()
+
+val = int(input("Enter one more element to enqueue: "))
+cq.enqueue(val)
+cq.display()
+

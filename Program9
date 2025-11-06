@@ -1,0 +1,93 @@
+Aim: To implement Graph Representation and Traversals.
+Program: Write a program to implement graphs using an adjacency list and perform BFS(Bredth-First-Search) and DFS(Depth-First-Search).
+	Test with graph
+	nodes [A, B, C, D], edges [A-B, B-C, C-D, A-D].
+
+Description:
+Graph Representation and Traversals
+This program implements a Graph data structure in Python using an adjacency list representation (HashMap of Lists), which efficiently stores graph connections. The Graph class provides:
+•	Adjacency List: Uses HashMap where keys are node names (strings) and values are lists of connected neighbors
+•	Add Node: Creates entries for vertices in the graph
+•	Add Edge: Creates undirected connections between two nodes by adding each to the other's adjacency list
+•	Breadth-First Search (BFS): Traverses graph level-by-level using a queue, visiting all neighbors before moving deeper
+•	Depth-First Search (DFS): Traverses graph by exploring as deep as possible along each branch using recursion
+The program is tested with nodes [A, B, C, D] and edges [A-B, B-C, C-D, A-D], creating a cyclic graph. BFS starting from node A produces traversal order [A, B, D, C], while DFS produces [A, B, C, D], demonstrating different exploration patterns.
+
+
+
+
+
+
+Code:
+print("P.Manoj cse-c 24241")
+from collections import deque
+
+class Graph:
+    def __init__(self):
+        self.graph = {}   # adjacency list (dictionary of lists)
+
+    # Add edge between two nodes
+    def add_edge(self, u, v):
+        if u not in self.graph:
+            self.graph[u] = []
+        if v not in self.graph:
+            self.graph[v] = []
+        self.graph[u].append(v)
+        self.graph[v].append(u)  # for undirected graph
+
+    # Display graph
+    def display(self):
+        print("\nGraph (Adjacency List):")
+        for node in self.graph:
+            print(node, "->", self.graph[node])
+
+    # Depth First Search (DFS)
+    def dfs(self, start, visited=None):
+        if visited is None:
+            visited = set()
+        visited.add(start)
+        print(start, end=" ")
+        for neighbor in self.graph[start]:
+            if neighbor not in visited:
+                self.dfs(neighbor, visited)
+
+    # Breadth First Search (BFS)
+    def bfs(self, start):
+        visited = set()
+        queue = deque([start])
+        visited.add(start)
+        while queue:
+            node = queue.popleft()
+            print(node, end=" ")
+            for neighbor in self.graph[node]:
+                if neighbor not in visited:
+                    visited.add(neighbor)
+                    queue.append(neighbor)
+
+# ---------------- MAIN PROGRAM ----------------
+g = Graph()
+
+# Taking user input
+print("Enter nodes (space separated):")
+nodes = input().split()
+
+print("\nEnter edges (format: A-B). Type 'done' to finish:")
+while True:
+    edge = input()
+    if edge.lower() == 'done':
+        break
+    u, v = edge.split('-')
+    g.add_edge(u, v)
+
+# Display the graph
+g.display()
+
+# DFS
+start_node = input("\nEnter starting node for DFS: ")
+print("DFS Traversal:")
+g.dfs(start_node)
+
+# BFS
+start_node = input("\n\nEnter starting node for BFS: ")
+print("BFS Traversal:")
+g.bfs(start_node)

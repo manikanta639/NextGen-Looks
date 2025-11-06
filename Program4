@@ -1,0 +1,117 @@
+Aim: To implement Sorting Algorithms.
+Program: Write a Program to implement two Sorting Algorithms (Merge Sort and Insertion Sort).Compare their performance with time modulo to determine how much time are they raking respectively to sort.
+Description:
+1. Insertion Sort 
+This program implements the Insertion Sort algorithm in Python, which sorts an array by building a sorted section one element at a time. The algorithm works by:
+•	Taking each element from the unsorted portion
+•	Comparing it with elements in the sorted portion
+•	Inserting it at the correct position by shifting larger elements to the right
+•	Repeating until all elements are sorted
+The program sorts an array of 50 integers. The original unsorted array contains values like [54, 37, 77, 44, 80, 51, 58, 95, 63, 96, 9, 87, 94...]. After sorting, the array is arranged in ascending order: [2, 4, 4, 7, 8, 9, 13, 16, 18, 26, 31, 37, 40, 41, 43, 44, 44, 51, 52, 53...]. The execution time was 34,300 nanoseconds (0.0343 milliseconds).
+Why this time? Insertion Sort has O(n²) time complexity. For this array of 50 elements, the algorithm performed approximately 50 × 50 = 2,500 operations in the worst case. The relatively fast time is due to the small dataset size and the simplicity of the algorithm - it only requires simple comparisons and shifts with minimal overhead.
+
+2. Merge Sort 
+This program implements the Merge Sort algorithm in Java, which uses the divide-and-conquer strategy to efficiently sort an array. The algorithm works by:
+•	Recursively dividing the array into two halves until single elements remain
+•	Merging the divided subarrays back together in sorted order
+•	Using temporary arrays to combine elements while maintaining order
+•	Continuing until the entire array is sorted
+The program sorts an array of 50 integers. The original unsorted array contains values like [87, 83, 89, 88, 93, 88, 91, 33, 54, 40, 5, 20, 47...]. After sorting, the array is arranged in ascending order: [5, 7, 13, 14, 15, 19, 20, 21, 23, 31, 33, 36, 40, 41, 47, 54, 54, 54, 55, 57...]. The execution time was 0.064 milliseconds (64,000 nanoseconds).
+Why this time? Merge Sort has O(n log n) time complexity, which theoretically should be faster than Insertion Sort's O(n²). However, for this small dataset of 50 elements, Merge Sort took nearly twice as long (1.87x slower) because of:
+•	Recursive function call overhead: Each recursive call creates a new stack frame, adding computational overhead
+•	Additional memory allocation: Merge Sort creates temporary arrays during the merge process, requiring memory allocation and deallocation operations
+•	More complex operations: The merging process involves copying elements between arrays, which adds overhead
+•	Small dataset size: The efficiency advantage of O(n log n) only becomes apparent with larger datasets (typically n > 100-200 elements)
+
+Code:
+print("P.Manoj cse-c 24241")
+import time
+import random
+
+# ---------- Insertion Sort ----------
+def insertion_sort(arr):
+    for i in range(1, len(arr)):
+        key = arr[i]
+        j = i - 1
+        while j >= 0 and key < arr[j]:
+            arr[j + 1] = arr[j]
+            j -= 1
+        arr[j + 1] = key
+    return arr
+
+# ---------- Merge Sort ----------
+def merge_sort(arr):
+    if len(arr) <= 1:
+        return arr
+
+    mid = len(arr) // 2
+    left = merge_sort(arr[:mid])
+    right = merge_sort(arr[mid:])
+
+    return merge(left, right)
+
+def merge(left, right):
+    result = []
+    i = j = 0
+
+    while i < len(left) and j < len(right):
+        if left[i] < right[j]:
+            result.append(left[i])
+            i += 1
+        else:
+            result.append(right[j])
+            j += 1
+
+    result += left[i:]
+    result += right[j:]
+    return result
+
+# ---------- Main Program ----------
+if __name__ == "__main__":
+    print("=== Sorting Algorithms Comparison ===")
+
+    choice = input("Do you want to enter your own list (y/n)? ").lower()
+
+    if choice == 'y':
+        arr = list(map(int, input("Enter numbers separated by commas: ").split(",")))
+    else:
+        arr = [64, 34, 25, 5, 22]
+        print("Using default list:", arr)
+
+    print("\nOriginal list:", arr)
+
+    # Measure Insertion Sort time
+    arr1 = arr.copy()
+    start = time.time()
+    insertion_sorted = insertion_sort(arr1)
+    end = time.time()
+    insertion_time = end - start
+
+    # Measure Merge Sort time
+    arr2 = arr.copy()
+    start = time.time()
+    merge_sorted = merge_sort(arr2)
+    end = time.time()
+    merge_time = end - start
+
+    print("\nInsertion Sort result:", insertion_sorted)
+    print("Merge Sort result:", merge_sorted)
+
+    print("\nTime taken:")
+    print(f"Insertion Sort: {insertion_time:.6f} seconds")
+    print(f"Merge Sort:     {merge_time:.6f} seconds")
+
+    # Compare performance with random 50 integers
+    random_list = [random.randint(1, 1000) for _ in range(50)]
+    print("\nRandom list of 50 numbers generated for comparison.")
+
+    start = time.time()
+    insertion_sort(random_list.copy())
+    t1 = time.time() - start
+
+    start = time.time()
+    merge_sort(random_list.copy())
+    t2 = time.time() - start
+
+    print(f"Insertion Sort (50 items): {t1:.6f} sec")
+    print(f"Merge Sort (50 items):     {t2:.6f} sec")

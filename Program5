@@ -1,0 +1,118 @@
+Aim: To implement Binary Search Tree and Perform Traversals.
+Program: Write a Program to implement BST(Binary Search Tree) and perform Insertion, Searching and Deletion (handle leaf and one-child cases) and use Inorder traversal to print the elements int it.
+	Test with: 
+	Insert [50, 20, 70]
+	Search 20 
+	Delete 20 
+	Print Inorder traversal.
+
+Description:
+Description:
+1. Binary Tree with Inorder Traversal
+This program implements a Binary Tree in Python using a Node class that contains data and references to left and right child nodes. The implementation includes:
+•	Node class: Contains integer data, left child pointer, and right child pointer
+•	Inorder Traversal: Recursively visits nodes in Left-Root-Right order, which produces a sorted sequence for BSTs
+•	Traversal process: 
+o	Traverse the left subtree
+o	Visit the root node
+o	Traverse the right subtree
+The inorder traversal is particularly useful for binary search trees as it visits nodes in ascending order, making it easy to verify if the tree maintains the BST property.
+2. Binary Search Tree (BST) Operations
+This program implements a Binary Search Tree in Python with fundamental operations that maintain the BST property (left child < parent < right child). The BST class provides:
+•	Insert: Adds a new node by recursively comparing values and placing it in the correct position
+•	Search: Finds a node by traversing left for smaller values and right for larger values
+•	Delete: Removes a node while maintaining BST structure, handling three cases: 
+o	Leaf node (no children): Simply remove the node
+o	One child: Replace the node with its only child
+o	Two children: Replace with inorder successor (smallest node in right subtree)
+•	Inorder Traversal: Displays tree elements in sorted order
+The program is tested by inserting [50, 20, 70] to create a tree with 50 as root, 20 as left child, and 70 as right child. After searching for 20 (successfully found), deleting 20 (a leaf node), and performing inorder traversal, the output shows [50, 70], confirming successful deletion.
+
+Code:
+# Node class
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.left = None
+        self.right = None
+
+# Binary Search Tree class
+class BST:
+    def __init__(self):
+        self.root = None
+
+    # Insert function
+    def insert(self, root, data):
+        if root is None:
+            return Node(data)
+        if data < root.data:
+            root.left = self.insert(root.left, data)
+        else:
+            root.right = self.insert(root.right, data)
+        return root
+
+    # Search function
+    def search(self, root, key):
+        if root is None:
+            return False
+        if root.data == key:
+            return True
+        elif key < root.data:
+            return self.search(root.left, key)
+        else:
+            return self.search(root.right, key)
+
+    # Find smallest value (used in delete)
+    def find_min(self, root):
+        while root.left is not None:
+            root = root.left
+        return root
+
+    # Delete function
+    def delete(self, root, key):
+        if root is None:
+            return root
+        if key < root.data:
+            root.left = self.delete(root.left, key)
+        elif key > root.data:
+            root.right = self.delete(root.right, key)
+        else:
+            # Node found
+            if root.left is None:
+                return root.right
+            elif root.right is None:
+                return root.left
+            # Node has two children
+            temp = self.find_min(root.right)
+            root.data = temp.data
+            root.right = self.delete(root.right, temp.data)
+        return root
+
+    # Inorder traversal
+    def inorder(self, root):
+        if root:
+            self.inorder(root.left)
+            print(root.data, end=" ")
+            self.inorder(root.right)
+
+# ---------------- MAIN PROGRAM ----------------
+bst = BST()
+root = None
+
+# User input for insertion
+nums = list(map(int, input("Enter values to insert (space-separated): ").split()))
+for n in nums:
+    root = bst.insert(root, n)
+
+# Search
+key = int(input("Enter value to search: "))
+print("Found!" if bst.search(root, key) else "Not found!")
+
+# Delete
+del_key = int(input("Enter value to delete: "))
+root = bst.delete(root, del_key)
+
+# Inorder traversal
+print("Inorder traversal after deletion:")
+bst.inorder(root)
+print()

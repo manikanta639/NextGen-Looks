@@ -1,0 +1,56 @@
+Aim: To implement Array Operations.
+Program: Write a program to implement Array Operations and perform the tasks of traversal, insertion, deletion and searching and execute them with provided test cases.
+•	Test with input array [5,3,8,1,9] insert 7 at 2, delete index 1, search 8, update index 3 to value 4. 
+Description: In this lab we have focused on developing a code for array implementation for the above tasks. For each and every task we have created a set of methods which we call according to the function and acquire required outputs. 
+Code:
+
+
+
+# Simple Python Program for Array Operations
+
+# Step 1: Take list input from user
+arr = list(map(int, input("Enter list elements (space separated): ").split()))
+print("Original List:", arr)
+
+# Step 2: Traverse the list
+print("\nList elements are:")
+for num in arr:
+    print(num, end=' ')
+print()
+
+# Step 3: Insert element
+pos = int(input("\nEnter index to insert: "))
+val = int(input("Enter value to insert: "))
+arr = arr[:pos] + [val] + arr[pos:]
+print("List after insertion:", arr)
+
+# Step 4: Delete element
+pos = int(input("\nEnter index to delete: "))
+if 0 <= pos < len(arr):
+    arr = arr[:pos] + arr[pos+1:]
+    print("List after deletion:", arr)
+else:
+    print("Invalid index!")
+
+# Step 5: Search element
+val = int(input("\nEnter value to search: "))
+found = -1
+for i in range(len(arr)):
+    if arr[i] == val:
+        found = i
+        break
+if found != -1:
+    print("Element found at index:", found)
+else:
+    print("Element not found!")
+
+# Step 6: Update element
+pos = int(input("\nEnter index to update: "))
+val = int(input("Enter new value: "))
+if 0 <= pos < len(arr):
+    arr[pos] = val
+    print("List after updating:", arr)
+else:
+    print("Invalid index!")
+# Step 7: Final output
+print("\nFinal List:", arr)
