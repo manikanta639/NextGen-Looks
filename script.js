@@ -30,7 +30,7 @@ const products = [
         id: 11, 
         name: "Combo", 
         category: "combos", 
-        image: "https://media.igram.world/get?__sig=GOptUZjoFmFoWASp4FZuwQ&__expires=1760461005&uri=https%3A%2F%2Fscontent-lga3-2.cdninstagram.com%2Fv%2Ft51.2885-15%2F564058066_17871832341454327_4669099439184615891_n.jpg%3Fstp%3Ddst-jpg_e15_fr_p1080x1080_tt6%26_nc_ht%3Dscontent-lga3-2.cdninstagram.com%26_nc_cat%3D107%26_nc_oc%3DQ6cZ2QGGHdMur1DixoS7qjd10oSDygj73t7PH8zH8dv2EzWlhEVyfzKxDgQpQYjgYc_C6X49b7louZUPFdQeRnR3d4aK%26_nc_ohc%3Dwi9KBjyo084Q7kNvwEcUV9Q%26_nc_gid%3DUtSiSFRssNHBQzrCwUm-jA%26edm%3DANTKIIoBAAAA%26ccb%3D7-5%26oh%3D00_AfeFBimiFWn9vTzBiYpnhPoeZJqcIsNfmnzv6a1uLrYIqA%26oe%3D68F43963%26_nc_sid%3Dd885a2&filename=564058066_17871832341454327_4669099439184615891_n.jpg", 
+        image: "img5", 
         link: "img5" ,
         isCombo: true
     },
@@ -38,7 +38,7 @@ const products = [
         id: 10, 
         name: "Spinning Watch", 
         category: "watches", 
-        image: "https://rukminim2.flixcart.com/image/832/832/xif0q/watch/f/u/v/1-spm01-spinner-men-original-imahgfcfmrxyvzzd.jpeg?q=70&crop=false", 
+        image: "img4", 
         link: "img4" ,
         isCombo: true
     },
@@ -46,7 +46,7 @@ const products = [
         id: 9, 
         name: "Watch", 
         category: "watches", 
-        image: "https://rukminim2.flixcart.com/image/832/832/xif0q/watch/s/n/n/1-avm0031-americanviber-men-women-original-imahcndcj4zbh9yj.jpeg?q=70&crop=false", 
+        image: "img3", 
         link: "img3" ,
         isCombo: true
     },
@@ -54,7 +54,7 @@ const products = [
         id: 8, 
         name: "Stylish Glasses", 
         category: "others", 
-        image: "https://rukminim2.flixcart.com/image/832/832/xif0q/shopsy-sunglass/9/e/4/55-gk-biground-silver-gynk-original-imah89aesm4pg9rz.jpeg?q=70&crop=false", 
+        image: "img2", 
         link: "img2" ,
         isCombo: true
     },
@@ -62,7 +62,7 @@ const products = [
         id: 7, 
         name: "Sweat Shirt", 
         category: "shirts", 
-        image: "https://rukminim2.flixcart.com/image/832/832/xif0q/sweatshirt/s/x/9/l-sszip1-plain-skin-fashion-and-youth-original-imah542vygdd4juu.jpeg?q=70&crop=false", 
+        image: "img1", 
         link: "img1" ,
         isCombo: true
     },
@@ -480,6 +480,7 @@ window.onload = function() {
   renderProducts(products);
   document.body.style.opacity = 1;
 };
+
 
 
 
