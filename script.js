@@ -30,7 +30,7 @@ const products = [
         id: 11, 
         name: "Combo", 
         category: "combos", 
-        image: "img5", 
+        image: "img5.png", 
         link: "img5" ,
         isCombo: true
     },
@@ -38,7 +38,7 @@ const products = [
         id: 10, 
         name: "Spinning Watch", 
         category: "watches", 
-        image: "img4", 
+        image: "img4.png", 
         link: "img4" ,
         isCombo: true
     },
@@ -46,7 +46,7 @@ const products = [
         id: 9, 
         name: "Watch", 
         category: "watches", 
-        image: "img3", 
+        image: "img3.png", 
         link: "img3" ,
         isCombo: true
     },
@@ -54,7 +54,7 @@ const products = [
         id: 8, 
         name: "Stylish Glasses", 
         category: "others", 
-        image: "img2", 
+        image: "img2.png", 
         link: "img2" ,
         isCombo: true
     },
@@ -62,7 +62,7 @@ const products = [
         id: 7, 
         name: "Sweat Shirt", 
         category: "shirts", 
-        image: "img1", 
+        image: "img1.png", 
         link: "img1" ,
         isCombo: true
     },
@@ -480,6 +480,7 @@ window.onload = function() {
   renderProducts(products);
   document.body.style.opacity = 1;
 };
+
 
 
 
