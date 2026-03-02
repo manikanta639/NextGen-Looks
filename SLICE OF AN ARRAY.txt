@@ -1,0 +1,18 @@
+#!/bin/bash
+
+echo "Enter space-separated elements:"
+read -a arr   # Read input into an array
+
+echo "Enter the start index:"
+read start
+
+echo "Enter the end index:"
+read end
+
+# Calculate length of the slice
+length=$((end - start + 1))
+
+# Extract the slice
+slice=("${arr[@]:start:length}")
+
+echo "Sliced array: ${slice[@]}"

@@ -1,0 +1,22 @@
+#!/bin/bash
+
+echo "Enter space-separated numbers:"
+read -a arr   # Read input into an array
+
+# Initialize smallest and largest with the first element
+smallest=${arr[0]}
+largest=${arr[0]}
+
+# Loop through the array
+for num in "${arr[@]}"; do
+    if [ "$num" -lt "$smallest" ]; then
+        smallest=$num
+    fi
+
+    if [ "$num" -gt "$largest" ]; then
+        largest=$num
+    fi
+done
+
+echo "Smallest number: $smallest"
+echo "Largest number: $largest"
