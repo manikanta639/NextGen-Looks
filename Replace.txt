@@ -1,0 +1,15 @@
+#!/bin/bash
+
+echo "Enter a sentence:"
+read sentence
+
+echo "Enter the word to replace:"
+read old_word
+
+echo "Enter the new word:"
+read new_word
+
+# Replace the word using sed
+modified_sentence=$(echo "$sentence" | sed "s/\b$old_word\b/$new_word/g")
+
+echo "Modified sentence: $modified_sentence"
