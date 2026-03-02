@@ -117,9 +117,9 @@ const products = [
 // Combo Products Data (Scalable)
 const comboProducts = {
 121: [
-    {name: "Shirt 1",image: "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/2024/SEPTEMBER/23/vL9OIpVP_72ab4b78b0df47acbea79e0fa71b8f22.jpg",link: "Program1"},
-    {name: "Shirt 2",image: "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/2024/SEPTEMBER/23/7iObIgXq_46fbd66e9caa4e59b295ba85fb3dad09.jpg",link: "Program2"},
-    {name: "Shirt 3",image: "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/25553720/2023/11/24/663a7b00-7d29-4f84-ac18-65705c0d4da61700802441762-Mens-Black-Corduroy-Oversize-Shirt-6421700802441328-1.jpg",link: "Program3"},
+    {name: "Shirt 1",image: "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/2024/SEPTEMBER/23/vL9OIpVP_72ab4b78b0df47acbea79e0fa71b8f22.jpg",link: "FCFS.txt"},
+    {name: "Shirt 2",image: "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/2024/SEPTEMBER/23/7iObIgXq_46fbd66e9caa4e59b295ba85fb3dad09.jpg",link: "SJF.txt"},
+    {name: "Shirt 3",image: "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/25553720/2023/11/24/663a7b00-7d29-4f84-ac18-65705c0d4da61700802441762-Mens-Black-Corduroy-Oversize-Shirt-6421700802441328-1.jpg",link: "ROUND ROBIN.txt"},
     {name: "Shirt 4",image: "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/25200304/2023/9/27/ae93b2b1-8a3a-41d8-b268-d608644398791695813199096NOBEROMenWhiteColourblockedTailoredJacket1.jpg",link: "Program4"},
     {name: "Shirt 5",image: "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/2025/APRIL/4/XJI15qut_862daca967b842b3a2088898887adb1d.jpg",link: "Program5"},
     {name: "Shirt 6",image: "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/2024/OCTOBER/30/DuOoY9me_1adfe29aea144413890706567bb724bb.jpg",link: "Program6"},
@@ -480,6 +480,7 @@ window.onload = function() {
   renderProducts(products);
   document.body.style.opacity = 1;
 };
+
 
 
 
