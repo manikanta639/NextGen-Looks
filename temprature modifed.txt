@@ -1,0 +1,59 @@
+#include "stm32f4xx.h"
+#include "stdio.h"
+
+#define TEMP_CONVERSION 0.00665
+
+int putchar(int ch) {
+    USART3->DR = ch;
+    while (!(USART3->SR & USART_SR_TC));
+    return ch;
+}
+
+int main(void) {
+    // ==== Enable Clocks ====
+    RCC->AHB1ENR |= RCC_AHB1ENR_GPIOAEN | RCC_AHB1ENR_GPIOCEN;
+    RCC->APB2ENR |= RCC_APB2ENR_SPI1EN;
+    RCC->APB1ENR |= RCC_APB1ENR_USART3EN;
+
+    // ==== SPI1 GPIO: PA5=SCK, PA6=MISO, PA7=MOSI ====
+    GPIOA->MODER |= (0xA << 10);  // AF for PA5, PA6, PA7
+    GPIOA->AFR[0] |= (5 << 20) | (5 << 24) | (5 << 28);  // AF5 for SPI1
+
+    // ==== CS Pin: PA4 ====
+    GPIOA->MODER |= (1 << 8);  // PA4 as output
+    GPIOA->ODR |= (1 << 4);    // CS High
+
+    // ==== SPI1 Config ====
+    SPI1->CR1 = SPI_CR1_MSTR | SPI_CR1_SSM | SPI_CR1_SSI |
+                SPI_CR1_BR_0 | SPI_CR1_BR_1;  // Master, soft NSS, fPCLK/16
+    SPI1->CR1 |= SPI_CR1_SPE;
+
+    // ==== USART3 GPIO: PC10 (TX), PC11 (RX) ====
+    GPIOC->MODER |= (0xA << 20);  // AF for PC10, PC11
+    GPIOC->AFR[1] |= (7 << 8) | (7 << 12);  // AF7 for USART3
+
+    // ==== USART3 Config ====
+    USART3->BRR = 0x016c;  // 115200 @16MHz
+    USART3->CR1 = USART_CR1_TE | USART_CR1_RE | USART_CR1_UE;
+
+    // ==== Main Loop ====
+    while (1) {
+        // Select device
+        GPIOA->ODR &= ~(1 << 4);  // CS Low
+
+        SPI1->DR = 0x03;
+        while (!(SPI1->SR & SPI_SR_RXNE));
+        uint8_t high = SPI1->DR;
+
+        SPI1->DR = 0x03;
+        while (!(SPI1->SR & SPI_SR_RXNE));
+        uint8_t low = SPI1->DR;
+
+        // Deselect device
+        GPIOA->ODR |= (1 << 4);  // CS High
+
+        uint16_t raw = (high << 8) | low;
+        float temp = raw * TEMP_CONVERSION;
+        printf("\n\rTemp: %.2f C", temp);
+    }
+}
