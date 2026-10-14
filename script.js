@@ -1,18 +1,39 @@
 // Sample Product Data
 const products = [
     { 
-        id: 6, 
+        id: 1, 
         name: "Lee Cooper", 
         category: "watches", 
         image: "https://rukminim2.flixcart.com/image/832/832/xif0q/watch/t/m/h/-original-imahftq4tu6ewft2.jpeg?q=70&crop=false", 
-        link: "ABCD.docx"
+        link: "led.c"
     },
     { 
-        id: 6, 
+        id: 2, 
         name: "Lee Cooper", 
         category: "watches", 
         image: "https://rukminim2.flixcart.com/image/832/832/xif0q/watch/t/m/h/-original-imahftq4tu6ewft2.jpeg?q=70&crop=false", 
-        link: "AA.docx"
+        link: "relay.c"
+    },
+    { 
+        id: 3, 
+        name: "Lee Cooper", 
+        category: "watches", 
+        image: "https://rukminim2.flixcart.com/image/832/832/xif0q/watch/t/m/h/-original-imahftq4tu6ewft2.jpeg?q=70&crop=false", 
+        link: "Dip_Switch.c"
+    },
+    { 
+        id: 4, 
+        name: "Lee Cooper", 
+        category: "watches", 
+        image: "https://rukminim2.flixcart.com/image/832/832/xif0q/watch/t/m/h/-original-imahftq4tu6ewft2.jpeg?q=70&crop=false", 
+        link: "LCD_GK.c"
+    },
+    { 
+        id: 5, 
+        name: "Lee Cooper", 
+        category: "watches", 
+        image: "https://rukminim2.flixcart.com/image/832/832/xif0q/watch/t/m/h/-original-imahftq4tu6ewft2.jpeg?q=70&crop=false", 
+        link: "temprature modifed.txt"
     },
 
     
